@@ -1,41 +1,49 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import styled from 'styled-components'
 import gatsbyLogo from '../images/gatsby-icon.png'
 
+const HeaderWrapper = styled.header`
+  background: #524763;
+  box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.3);
+`;
+
+const HeaderContainer = styled.div`
+    margin: 0 auto;
+    max-width: 960;
+    padding: 0.5rem;
+`;
+
+const StyledLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+    display: flex;
+    img {
+      width: 50px;
+      height: 50px;
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+`;
+
+const Heading = styled.h1`
+  margin: 0;
+  display: inline;
+`;
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <Link
-        to="/"
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-          display: "flex"
-        }}
-      >
-        <img src={gatsbyLogo} alt="" style={{
-          width: "50px",
-          height: "50px",
-          display: "inline"
-        }}/>
-        <h1 style={{ margin: 0, display: "inline" }}>
+  <HeaderWrapper>
+    <HeaderContainer>
+      <StyledLink to="/">
+        <img src={gatsbyLogo} alt="" />
+        <Heading>
             {siteTitle}
-        </h1>
-      </Link>
-    </div>
-  </header>
+        </Heading>
+      </StyledLink>
+    </HeaderContainer>
+  </HeaderWrapper>
 )
 
 Header.propTypes = {
