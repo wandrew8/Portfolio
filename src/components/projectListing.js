@@ -29,24 +29,20 @@ const Post = styled.article`
 `;
 
 const LISTING_QUERY = graphql`
-query BlogPostListing {
-    allMarkdownRemark(limit: 10, sort: 
-      {
-        order: DESC, 
-        fields: [frontmatter___date]
-    }) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            title
-            slug
-            date(formatString: "MMMM DD, YYYY")
-          }
+query ProjectListing {
+  allMarkdownRemark(limit: 10, filter: {frontmatter: {posttype: {eq: "project"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          slug
+          date(formatString: "MMMM DD, YYYY")
+          tags
         }
       }
     }
   }
+}
 `
 
 const Listing = () => (
@@ -54,19 +50,21 @@ const Listing = () => (
     query={LISTING_QUERY}
     render={({ allMarkdownRemark }) => {
         return (
-            allMarkdownRemark.edges.map(edge => {
-                const { excerpt, frontmatter: { slug, title, date } } = edge.node
-                return (
-                    <Post key={slug}>
-                        <Link to={`/posts${slug}`}>
-                            <h2>{title}</h2>
-                        </Link>
-                        <small>{date}</small>
-                        <p>{excerpt}</p>
-                        <Link className="read-more" to={`/posts${slug}`}>Read More</Link>
-                    </Post>
-                )
-            })
+            <div>
+              {allMarkdownRemark.edges.map(edge => {
+                  const { excerpt, frontmatter: { slug, title, date } } = edge.node
+                  return (
+                      <Post key={slug}>
+                          <Link to={`/projects${slug}`}>
+                              <h2>{title}</h2>
+                          </Link>
+                          <small>{date}</small>
+                          <p>{excerpt}</p>
+                          <Link className="read-more" to={`/projects${slug}`}>Read More</Link>
+                      </Post>
+                  )
+              })}
+            </div>
         )
     }}
 

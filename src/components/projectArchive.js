@@ -16,23 +16,20 @@ const ArchiveList = styled.ul`
 `;
 
 const POST_ARCHIVE_QUERY = graphql`
-query BlogPostArchive {
-    allMarkdownRemark(limit: 5, sort: 
-      {
-        order: DESC, 
-        fields: [frontmatter___date]
-    }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
-            date(formatString: "MMMM DD, YYYY")
-          }
+query ProjectArchive {
+  allMarkdownRemark(limit: 5, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          slug
+          date(formatString: "MMMM DD, YYYY")
+          tags
         }
       }
     }
   }
+}
 
 `
 
@@ -48,7 +45,7 @@ const Archive = () => {
             {edges.map((edge) => {
                 const { title, slug } = edge.node.frontmatter;
                return ( 
-                   <Link key={slug} to={`/posts${slug}`}>
+                   <Link key={slug} to={`/projects${slug}`}>
                         <li>
                             {title}
                         </li>

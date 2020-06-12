@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '../../components/layout'
 
-const About = () => {
+const About = ({location}) => {
     return(
-        <Layout>
+        <Layout location={location}>
             <h1>Hover Effects</h1>
             <p>This is the about us text</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ratione vel adipisci, nisi vitae animi quia sequi. Eveniet, laborum, nesciunt amet, est modi rem error ipsa provident ab quasi quidem!</p>

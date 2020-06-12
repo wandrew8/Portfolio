@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Archive from './archive'
 import Img from 'gatsby-image'
 import { Spring } from 'react-spring/renderprops'
 import { useStaticQuery, graphql } from "gatsby"
@@ -50,10 +49,7 @@ const Layout = ({ children, location }) => {
             )}
           </Spring>
         <MainWrapper>
-          <div>
             {children}
-          </div>
-          <Archive />
         </MainWrapper>
         <footer>
           © {new Date().getFullYear()}, Built with
@@ -66,6 +62,10 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+}
+
+Layout.defaultProps = {
+  location: {},
 }
 
 export default Layout

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from 'styled-components'
-import gatsbyLogo from '../images/gatsby-icon.png'
+import logo from '../images/512x512.png'
 
 const HeaderWrapper = styled.header`
   background: #524763;
@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <HeaderContainer>
       <StyledLink to="/">
-        <img src={gatsbyLogo} alt="" />
+        <img src={logo} alt="" />
         <Heading>
             {siteTitle}
         </Heading>
