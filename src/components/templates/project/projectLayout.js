@@ -3,19 +3,59 @@ import { graphql, Link } from 'gatsby'
 import ProjectArchive from '../../projectArchive'
 import Img from "gatsby-image"
 import Layout from '../../layout'
+import styled from 'styled-components'
+import Author from '../../author'
+import { variables } from '../../../styles/variables'
+
+const StyledHTML = styled.div`
+    p {
+        text-align: justify;
+    }
+   
+`;
+
+const Container = styled.div`
+    position: relative;
+    h1 {
+        margin: 3rem 0rem 0rem 0rem;
+        font-weight: 700;
+    }
+    .subtitle {
+        color: ${variables.primaryLightGray};
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+    .tags {
+        display: flex;
+        a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: ${variables.primaryLightGray}
+        }
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+    }
+    .mainPhoto {
+        border-radius: 5px;
+    }
+`;
+
 
 export default class projectLayout extends Component {
     render() {
-        const { html, frontmatter: { title, date, tags } } = this.props.data.markdownRemark;
+        const { html, frontmatter: { title, date, tags, primaryTech, category, subtitle } } = this.props.data.markdownRemark;
         const { location, pageContext: { next, prev } } = this.props;
         const image = this.props.data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
         return (
             <Layout location={location}>
-                <div>
+                <Container>
                     <h1>{title}</h1>
-                    <p>{date}</p>
-                    <Img fluid={image} />
-                    <div dangerouslySetInnerHTML={{
+                    <p className="subtitle">{subtitle}</p>
+                    <Author date={date} category={category} primaryTech={primaryTech} />
+                    <Img className="mainPhoto" fluid={image} />
+                    <StyledHTML dangerouslySetInnerHTML={{
                         __html: html
                     }} />
                     <div className="tags">
@@ -23,15 +63,17 @@ export default class projectLayout extends Component {
                             <Link to={`/projects/type/${tag}`} ><p>#{tag}</p></Link>
                         ))}
                     </div>
-                    {next &&
-                        <Link to={`/projects${next.frontmatter.slug}`}>
-                            Next
-                        </Link> }
-                    {prev &&
-                        <Link to={`/projects${prev.frontmatter.slug}`}>
-                            Prev
-                        </Link>}   
-                </div>
+                    <div className="navigation">
+                        {prev ?
+                            <Link to={`/projects${prev.frontmatter.slug}`}>
+                                Prev
+                            </Link> : <div></div>}   
+                        {next ?
+                            <Link to={`/projects${next.frontmatter.slug}`}>
+                                Next
+                            </Link> : <div></div>}
+                    </div>
+                </Container>
                 <ProjectArchive />
             </Layout>
         )
@@ -48,10 +90,13 @@ export const query = graphql`
             html
             frontmatter {
                 title
-                date(formatString: "MMMM DD, YYYY")
+                date(fromNow: true)
                 slug
                 tags
                 posttype
+                subtitle
+                category
+                primaryTech
                 featuredImage {
                     childImageSharp {
                       fluid(maxWidth: 800) {

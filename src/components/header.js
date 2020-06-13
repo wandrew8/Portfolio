@@ -39,7 +39,7 @@ const Header = ({ siteTitle }) => (
       <StyledLink to="/">
         <img src={logo} alt="" />
         <Heading>
-            {siteTitle}
+            Portfolio
         </Heading>
       </StyledLink>
     </HeaderContainer>

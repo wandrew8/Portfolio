@@ -3,6 +3,10 @@ export const variables = {
     primaryDark: "#161616",
     primaryLight: "#E6E6E6",
     primaryWhite: "#fdfdfe",
+
+    primaryGray: "#292929",
+    primaryLightGray: "#7f7f7f",
+
     primaryBlue: "#264653",
     primaryGreen: "#2a9d8f",
     secondaryBlue: "#457b9d",
@@ -12,6 +16,10 @@ export const variables = {
     //Typography Variables
     primaryFont: "'Open Sans', sans-serif;",
     headingFont: "'Raleway', sans-serif",
+    // headingFont: "'Patua One', cursive",
+    // headingFont: "'Salsa', cursive",
+    // headingFont: "'Roboto Slab', serif",
+    // headingFont: "'Julius Sans One', sans-serif",
 
     //Other Variables
     boxShadow: "2px 2px 5px rgba(0,0,0,0.2)",

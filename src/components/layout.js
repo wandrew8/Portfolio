@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from 'gatsby-image'
 import { Spring } from 'react-spring/renderprops'
-import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import Header from "./header"
 import App from './app'
@@ -11,45 +9,32 @@ import "./layout.css"
 
 const MainWrapper = styled.main`
   max-width: 90%;
-  margin: 2rem auto;
+  margin: 0rem auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 1rem;
-  @media only screen and (max-width: ${variables.small}) {
+  @media only screen and (max-width: ${variables.medium}) {
         grid-template-columns: 1fr;
     }
 
 `;
 
-const Layout = ({ children, location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      file(relativePath: {
-        regex: "/IMG/"
-      }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-  `)
+const Gradient = styled.div`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, ${variables.primaryBlue}, ${variables.primaryGreen});
+`;
 
+const Layout = ({ children, location }) => {
   return (
     <App>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
           <Spring 
-            from={{ height: location.pathname === '/' ? 100 : 200 }} 
-            to={{ height: location.pathname === '/' ? 200 : 100 }}>
+            from={{ height: location.pathname === '/' ? 50 : 100 }} 
+            to={{ height: location.pathname === '/' ? 100 : 50 }}>
             {styles => (
               <div style={{overflow: 'hidden', ...styles}}>
-                <Img fluid={data.file.childImageSharp.fluid} />
+                <Gradient/>
               </div>
             )}
           </Spring>

@@ -8,9 +8,8 @@ category: "E-Commerce"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./art2.jpg
 order: 50
+primaryTech: "JavaScript"
 ---
-
-# 50
 
 ## Location-Based, FoodCommerce Application
 

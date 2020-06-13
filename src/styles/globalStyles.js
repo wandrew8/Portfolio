@@ -23,11 +23,25 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: ${variables.headingFont};
-    color: ${variables.primaryDark};
-    font-weight: 400;
-    margin-bottom: 3rem;
+    color: ${variables.primaryBlue};
+    font-weight: 300;
+    margin: 2rem 0rem;
+}
+h1, h2, h3 {
+    text-transform: uppercase;
 }
 `;
 

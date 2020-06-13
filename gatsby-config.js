@@ -20,6 +20,22 @@ module.exports = {
       options: {
         fonts: [
           {
+            family: `Julius Sans One`,
+            variants: [`300`, `400`, `600`, `700`]
+          },
+          {
+            family: 'Roboto Slab',
+            variants: [`300`, `400`, `600`, `700`],
+          },
+          {
+            family: `Salsa`,
+            variants: [`400`]
+          },
+          {
+            family: `Patua One`,
+            variants: [`400`]
+          },
+          {
             family: `Open Sans`,
             variants: [`300`, `400`, `600`, `700`]
           },

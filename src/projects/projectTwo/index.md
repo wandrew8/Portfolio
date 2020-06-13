@@ -8,9 +8,8 @@ category: "Educative Game"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./coral2.jpg
 order: 40
+primaryTech: "React"
 ---
-
-# 40
 
 ## Location-Based, FoodCommerce Application
 
