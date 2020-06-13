@@ -7,9 +7,10 @@ posttype: "project"
 category: "E-Commerce"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./art2.jpg
+order: 45
 ---
 
-# OLAF
+# 45
 
 ## Location-Based, FoodCommerce Application
 

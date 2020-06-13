@@ -30,19 +30,20 @@ const Post = styled.article`
 
 const LISTING_QUERY = graphql`
 query BlogPostListing {
-    allMarkdownRemark(limit: 10, filter: {frontmatter: {posttype: {eq: "post"}}}) {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
-            date(formatString: "MMMM DD, YYYY")
-            tags
-          }
+  allMarkdownRemark(limit: 10, filter: {frontmatter: {posttype: {eq: "post"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          slug
+          date(formatString: "MMMM DD, YYYY")
+          tags
         }
       }
     }
   }
+}
+
 `
 
 const Listing = () => (

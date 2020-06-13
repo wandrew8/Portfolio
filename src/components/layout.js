@@ -5,6 +5,8 @@ import { Spring } from 'react-spring/renderprops'
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import Header from "./header"
+import App from './app'
+import { variables } from '../styles/variables'
 import "./layout.css"
 
 const MainWrapper = styled.main`
@@ -13,6 +15,9 @@ const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 1rem;
+  @media only screen and (max-width: ${variables.small}) {
+        grid-template-columns: 1fr;
+    }
 
 `;
 
@@ -37,7 +42,7 @@ const Layout = ({ children, location }) => {
   `)
 
   return (
-    <>
+    <App>
       <Header siteTitle={data.site.siteMetadata.title} />
           <Spring 
             from={{ height: location.pathname === '/' ? 100 : 200 }} 
@@ -56,7 +61,7 @@ const Layout = ({ children, location }) => {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-    </>
+    </App>
   )
 }
 

@@ -7,9 +7,10 @@ posttype: "project"
 category: "Educative Game"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./coral2.jpg
+order: 40
 ---
 
-# OLAF
+# 40
 
 ## Location-Based, FoodCommerce Application
 

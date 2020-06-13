@@ -30,7 +30,7 @@ const Post = styled.article`
 
 const LISTING_QUERY = graphql`
 query ProjectPostListing {
-    allMarkdownRemark(limit: 5, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+allMarkdownRemark(limit: 5, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: DESC, fields: frontmatter___order}) {
       edges {
         node {
           excerpt
