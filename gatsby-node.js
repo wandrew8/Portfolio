@@ -1,4 +1,6 @@
 const path = require('path');
+const { createFilePath } = require("gatsby-source-filesystem")
+
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
@@ -6,7 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
         graphql(`
         {
-            allMarkdownRemark {
+            allMarkdownRemark (sort: {order: ASC, fields: frontmatter___title}) {
               edges {
                 node {
                   frontmatter {
@@ -20,7 +22,8 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `).then(results => {
-            results.data.allMarkdownRemark.edges.forEach(({ node }) => {
+            const post = results.data.allMarkdownRemark.edges
+            post.forEach(({ node }, index) => {
                 if (node.frontmatter.posttype === 'project') {
                     createPage({
                       path: `/projects${node.frontmatter.slug}`,
@@ -28,6 +31,9 @@ exports.createPages = ({ graphql, actions }) => {
                       context: {
                         slug:  node.frontmatter.slug,
                         category: node.frontmatter.category,
+                        tags: node.frontmatter.tags,
+                        prev: index === 0 ? null : post[index - 1].node.frontmatter.posttype === "post" ? null : post[index - 1].node,
+                        next: index === (post.length - 1) ? null : post[index + 1].node.frontmatter.posttype === "post" ? null : post[index + 1].node,
                       }
                     });
                   } else { // blog post
@@ -37,7 +43,10 @@ exports.createPages = ({ graphql, actions }) => {
                         context: {
                         slug: node.frontmatter.slug,
                         category: node.frontmatter.category,
-                      }
+                        tags: node.frontmatter.tags,
+                        prev: index === 0 ? null : post[index - 1].node.frontmatter.posttype === "project" ? null : post[index - 1].node,
+                        next: index === (post.length - 1) ? null : post[index + 1].node.frontmatter.posttype === "project" ? null : post[index + 1].node,
+                    }  
                     });
                   }
             })

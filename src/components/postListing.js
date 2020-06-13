@@ -55,7 +55,7 @@ const Listing = () => (
                 const { excerpt, frontmatter: { slug, title, date } } = edge.node
                 return (
                     <Post key={slug}>
-                        <Link to={`/projects${slug}`}>
+                        <Link to={`/posts${slug}`}>
                             <h2>{title}</h2>
                         </Link>
                         <small>{date}</small>

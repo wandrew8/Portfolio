@@ -1,17 +1,16 @@
 ---
-slug: "/first-post"
-title: "Our First Post"
+slug: "/olaf-application"
+title: "Olaf"
+subtitle: "Location-Based, FoodCommerce Application"
 date: "2020-06-10"
 posttype: "project"
-category: "UI Design"
+category: "E-Commerce"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./art2.jpg
 ---
 
-# All About Gatsby
+# OLAF
 
-## Wait, What is Gatsby?
+## Location-Based, FoodCommerce Application
 
-I like to describe it as Create React App on steroids, where it’s an easy way to bootstrap a React application and focus on getting productive with the truly different parts of your application. At its core, it’s a glorified webpack app, where everything gets built upon that same webpack pipeline that you’ve struggled to write and fully understand to this day (or maybe that’s just me).
-
-The beauty, though, is that what it outputs is a static website (simple HTML file) with your application pre-rendered for optimal delivery. This means it can essentially run anywhere, like simply dumping it in S3 and serving it as a static webpage or even easier, have Netlify build and serve it for you.
+Olaf is a community-driven food service web application which offers both seller and customer interactivity. Users can create an account as either a customer or chef for different user experiences. As a chef, the user can create food items to post online. (Photos can be added to the online items through the use of Cloudinary.) Once the chef is online, their address is converted to geo-coordinates using the Geocoding API, and the chef's location is placed on a map using Google Maps API. Now the customer can search the map to find online chef's and shop for items to add to their cart. Once a customer has completed checkout, the customer and chef are notified of order details via text message through the use of Twilio. This application was created using React and MDBootstrap on the front end. Data is stored in a MySQL database with the use of Sequelize NPM.

@@ -1,12 +1,12 @@
 ---
-slug: "/dictionary-application"
-title: "Dictionary App"
-subtitle: "Dictionary Search and Vocabulary-Building Application"
-date: "2020-06-10"
+slug: "/gatsby-application"
+title: "Gatsby Portfolio"
+subtitle: "Location-Based, FoodCommerce Application"
+date: "2020-06-07"
 posttype: "project"
-category: "Educative Game"
+category: "E-Commerce"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
-featuredImage: ./coral2.jpg
+featuredImage: ./art2.jpg
 ---
 
 # OLAF

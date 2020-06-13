@@ -5,7 +5,7 @@ date: "2020-06-11"
 posttype: "post"
 category: "Design"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
-featuredImage: ./coral2.jpg
+featuredImage: ./coral.jpg
 ---
 
 # Gatsby is Awesome!

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PostLayout from './templates/post/postLayout'
+import PostLayout from './templates/postLayout'
 import { Link, graphql } from 'gatsby'
 
 const Tags = ({ pageContext, data }) => {

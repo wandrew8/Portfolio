@@ -29,20 +29,20 @@ const Post = styled.article`
 `;
 
 const LISTING_QUERY = graphql`
-query ProjectListing {
-  allMarkdownRemark(limit: 10, filter: {frontmatter: {posttype: {eq: "project"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          slug
-          date(formatString: "MMMM DD, YYYY")
-          tags
+query ProjectPostListing {
+    allMarkdownRemark(limit: 5, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            title
+            slug
+            date(formatString: "MMMM DD, YYYY")
+          }
         }
       }
     }
   }
-}
 `
 
 const Listing = () => (

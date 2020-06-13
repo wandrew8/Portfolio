@@ -4,10 +4,10 @@ import ProjectArchive from '../../projectArchive'
 import Img from "gatsby-image"
 import Layout from '../../layout'
 
-export default class postLayout extends Component {
+export default class projectLayout extends Component {
     render() {
         const { html, frontmatter: { title, date, tags } } = this.props.data.markdownRemark;
-        const { location } = this.props;
+        const { location, pageContext: { next, prev } } = this.props;
         const image = this.props.data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
         return (
             <Layout location={location}>
@@ -23,6 +23,14 @@ export default class postLayout extends Component {
                             <Link to={`/projects/type/${tag}`} ><p>#{tag}</p></Link>
                         ))}
                     </div>
+                    {next &&
+                        <Link to={`/projects${next.frontmatter.slug}`}>
+                            Next
+                        </Link> }
+                    {prev &&
+                        <Link to={`/projects${prev.frontmatter.slug}`}>
+                            Prev
+                        </Link>}   
                 </div>
                 <ProjectArchive />
             </Layout>

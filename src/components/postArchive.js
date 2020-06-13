@@ -45,7 +45,7 @@ const Archive = () => {
             {edges.map((edge) => {
                 const { title, slug } = edge.node.frontmatter;
                return ( 
-                   <Link key={slug} to={`/projects${slug}`}>
+                   <Link key={slug} to={`/posts${slug}`}>
                         <li>
                             {title}
                         </li>

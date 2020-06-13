@@ -7,7 +7,7 @@ import Layout from '../../layout'
 export default class postLayout extends Component {
     render() {
         const { html, frontmatter: { title, date, tags } } = this.props.data.markdownRemark;
-        const { location } = this.props;
+        const { location, pageContext: { next, prev } } = this.props;
         const image = this.props.data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
         return (
             <Layout location={location}>
@@ -20,9 +20,17 @@ export default class postLayout extends Component {
                     }} />
                     <div className="tags">
                         {tags.map(tag => (
-                            <Link to={`/posts/type/${tag}`} ><p>#{tag}</p></Link>
+                            <Link key={tag} to={`/posts/type/${tag}`} ><p>#{tag}</p></Link>
                         ))}
                     </div>
+                    {next &&
+                        <Link to={`/posts${next.frontmatter.slug}`}>
+                            Next
+                        </Link> }
+                    {prev &&
+                        <Link to={`/posts${prev.frontmatter.slug}`}>
+                            Prev
+                        </Link>}                        
                 </div>
                 <PostArchive />
             </Layout>
