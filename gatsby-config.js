@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "wandrew8.github.io/portfolio/",
   siteMetadata: {
     title: `Portfolio`,
     description: `Portfolio built using Gatsby`,
