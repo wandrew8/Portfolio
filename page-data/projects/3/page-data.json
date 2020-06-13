@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-pages-projects-js","path":"/projects/3","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"Our First Post","slug":"/first-post"}}},{"node":{"frontmatter":{"title":"Gatsby Portfolio","slug":"/gatsby-application"}}}]}},"pageContext":{"limit":2,"skip":4,"numPages":3,"currentPage":3}}}

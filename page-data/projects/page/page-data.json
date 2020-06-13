@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-pages-projects-js","path":"/projects/page","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"Our Second Post","slug":"/second-post"}}},{"node":{"frontmatter":{"title":"Olaf","slug":"/olaf-application"}}}]}},"pageContext":{"limit":2,"skip":0,"numPages":3,"currentPage":1}}}

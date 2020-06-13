@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-pages-projects-js","path":"/projects/2","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"Dictionary App","slug":"/dictionary-application"}}},{"node":{"frontmatter":{"title":"Olaf","slug":"/olaf-application"}}}]}},"pageContext":{"limit":2,"skip":2,"numPages":3,"currentPage":2}}}
