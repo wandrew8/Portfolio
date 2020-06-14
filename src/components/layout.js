@@ -13,6 +13,7 @@ const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 1rem;
+  padding: 1rem 0rem;
   @media only screen and (max-width: ${variables.medium}) {
         grid-template-columns: 1fr;
     }

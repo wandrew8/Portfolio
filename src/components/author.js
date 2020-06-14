@@ -40,16 +40,18 @@ const AuthorContainer = styled.div`
     }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
     padding: 0.2rem 0.5rem;
     text-align: center;
     border-radius: 5px;
+    display: block;
     border: solid 2px ${variables.primaryBlue};
     color: ${variables.primaryBlue};
     transition: 300ms ease-in;
     cursor: pointer;
     width: auto-fit;
     background: transparent;
+    margin: 0.5rem 0rem;
     &:hover {
         border: solid 2px ${variables.primaryBlue};
         color: ${variables.primaryWhite};

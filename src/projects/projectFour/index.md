@@ -2,7 +2,7 @@
 slug: "/gatsby-application"
 title: "Gatsby Portfolio"
 subtitle: "Location-Based, FoodCommerce Application"
-date: "2020-06-07"
+date: "2020-02-07"
 posttype: "project"
 category: "E-Commerce"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
@@ -11,7 +11,7 @@ order: 55
 primaryTech: "React"
 ---
 
-## Location-Based, FoodCommerce Application
+## Huh? Location-Based, FoodCommerce Application
 
 Olaf is a community-driven food service web application which offers both seller and customer interactivity. Users can create an account as either a customer or chef for different user experiences.
 

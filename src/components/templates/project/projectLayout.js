@@ -16,9 +16,11 @@ const StyledHTML = styled.div`
 
 const Container = styled.div`
     position: relative;
+    max-width: 800px;
+    margin: 0 auto;
     h1 {
         margin: 3rem 0rem 0rem 0rem;
-        font-weight: 700;
+        font-weight: 500;
     }
     .subtitle {
         color: ${variables.primaryLightGray};
