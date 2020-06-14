@@ -1,4 +1,5 @@
 const path = require('path');
+const _ = require('lodash');
 const { createFilePath } = require("gatsby-source-filesystem")
 
 
@@ -8,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
         graphql(`
         {
-            allMarkdownRemark (sort: {order: ASC, fields: frontmatter___title}) {
+            postsGroup: allMarkdownRemark (sort: {order: ASC, fields: frontmatter___title}) {
               edges {
                 node {
                   frontmatter {
@@ -20,9 +21,25 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            tagsGroup: allMarkdownRemark(limit: 50) {
+                group(field: frontmatter___tags) {
+                  fieldValue
+                }
+              }
           }
         `).then(results => {
-            const post = results.data.allMarkdownRemark.edges
+            const tags = results.data.tagsGroup.group
+                  tags.forEach(tag => {
+                      createPage({
+                      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+                      component: path.resolve('./src/components/templates/tags/tagsLayout.js'),
+                      context: {
+                          tag: tag.fieldValue,
+                      },
+                      })
+                  })
+            
+            const post = results.data.postsGroup.edges
             post.forEach(({ node }, index) => {
                 if (node.frontmatter.posttype === 'project') {
                     createPage({
@@ -49,7 +66,8 @@ exports.createPages = ({ graphql, actions }) => {
                     }  
                     });
                   }
-            })
+                })
+                
             resolve();
         })
     })

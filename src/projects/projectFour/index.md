@@ -4,16 +4,18 @@ title: "Gatsby Portfolio"
 subtitle: "Location-Based, FoodCommerce Application"
 date: "2020-02-07"
 posttype: "project"
-category: "E-Commerce"
+category: "Social Media"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./art2.jpg
 order: 55
 primaryTech: "React"
+github: "https://github.com/wandrew8/dictionaryApp"
+website: "https://wandrew8.github.io/dictionaryApp/#/"
 ---
 
-## Huh? Location-Based, FoodCommerce Application
+## Picture-Based Social Media Platform
 
-Olaf is a community-driven food service web application which offers both seller and customer interactivity. Users can create an account as either a customer or chef for different user experiences.
+Picture based app is a community-driven food service web application which offers both seller and customer interactivity. Users can create an account as either a customer or chef for different user experiences.
 
 As a chef, the user can create food items to post online. (Photos can be added to the online items through the use of Cloudinary.) Once the chef is online, their address is converted to geo-coordinates using the Geocoding API, and the chef's location is placed on a map using Google Maps API.
 

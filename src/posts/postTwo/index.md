@@ -4,7 +4,6 @@ title: "Our Second Post"
 date: "2020-06-11"
 posttype: "post"
 category: "Design"
-tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./coral.jpg
 ---
 

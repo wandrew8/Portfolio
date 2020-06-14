@@ -4,7 +4,6 @@ title: "Our First Post"
 date: "2020-06-10"
 posttype: "post"
 category: "UI Design"
-tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./canyon.jpeg
 ---
 

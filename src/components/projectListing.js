@@ -4,7 +4,7 @@ import { variables } from '../styles/variables'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-const GridContainer = styled.div`
+export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   grid-gap: 1rem;
@@ -16,7 +16,7 @@ const GridContainer = styled.div`
     }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
     padding: 0rem 0.5rem;
     text-align: center;
     border-radius: 2px;
@@ -34,7 +34,7 @@ const Button = styled.button`
     }
 `;
 
-const Post = styled.article`
+export const Post = styled.article`
     box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.05);
     padding: 1rem;
     border-radius: 4px;

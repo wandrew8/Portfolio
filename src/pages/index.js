@@ -8,7 +8,7 @@ const IndexPage = ({location}) => (
     <SEO title="Home" />
     <Layout location={location}>
       <div>
-
+        <Link to="/tags">All Tags</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/posts">Blog Posts</Link>
       </div>

@@ -8,11 +8,17 @@ import { variables } from '../styles/variables'
 const AuthorContainer = styled.div`
     display: grid;
     grid-template-columns: 50px 1fr 1fr;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     align-items: center;
     justify-content: center;
     text-align: left;
     margin: 1rem 0rem;
+    @media only screen and (max-width: ${variables.small}) {
+            grid-template-columns: 50px 1fr;
+            .buttonHolder {
+                display: none;
+            }
+    }
     .authorName {
         font-style: italic;
     }
@@ -83,7 +89,7 @@ export default function Author(props) {
     return (
         <AuthorContainer>
             <Img className="avatarImg" fluid={image} />
-            <div>
+            <div className="dateInfo">
                 <p className="authorName">By Andrew Weiss</p>
                 <div className="date">
                     <p>{date} </p>

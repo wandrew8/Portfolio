@@ -20,6 +20,11 @@ const MainWrapper = styled.main`
 
 `;
 
+const StyledFooter = styled.footer`
+  color: ${variables.primaryLightGray};
+  font-size: 0.9rem;
+`;
+
 const Gradient = styled.div`
   width: 100%;
   height: 100%;
@@ -42,11 +47,9 @@ const Layout = ({ children, location }) => {
         <MainWrapper>
             {children}
         </MainWrapper>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <StyledFooter>
+          © {new Date().getFullYear()} Andrew Weiss
+        </StyledFooter>
     </App>
   )
 }
