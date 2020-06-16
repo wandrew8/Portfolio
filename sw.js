@@ -27,20 +27,68 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-418a07b77d29ae57db32.js"
+    "url": "webpack-runtime-a805d27792c9ea347307.js"
   },
   {
-    "url": "framework-d9760d5f29a556096c12.js"
+    "url": "framework-f2b1673255104281184a.js"
   },
   {
-    "url": "app-79d3bc51d2bbe0e10a6e.js"
+    "url": "app-bec4ba576ec3303294ab.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "51f21beed38ed795d962c8bd8ac8db33"
+    "revision": "83c9166778f3fab0f45769152e9083d4"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-06e676c3cd7b78941a0b.js"
+    "url": "google-fonts/s/juliussansone/v8/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2",
+    "revision": "cfdae712dfd393ac61f0245c0fb7d9c6"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2",
+    "revision": "0edb76284a7a0f8db4665b560ee2b48f"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem5YaGs126MiZpBA-UNirkOUuhp.woff2",
+    "revision": "819af3d3abdc9f135d49b80a91e2ff4c"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2",
+    "revision": "24f7b0944e9e03a905f9d7701573b2cd"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0b.woff2",
+    "revision": "33543c5cc5d88f5695dd08c87d280dfd"
+  },
+  {
+    "url": "google-fonts/s/patuaone/v10/ZXuke1cDvLCKLDcimxB44_lu.woff2",
+    "revision": "95e3e75c69bd36dae9650e8047f2f32e"
+  },
+  {
+    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwIYqWqZPAA.woff2",
+    "revision": "d724dad2e61905f488d048e51d45ae3e"
+  },
+  {
+    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwJYtWqZPAA.woff2",
+    "revision": "77d77f36bed0a452984832f6b5f22e3f"
+  },
+  {
+    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwOIpWqZPAA.woff2",
+    "revision": "3fef5ebed6aa72326bf742645ba8a331"
+  },
+  {
+    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwPIsWqZPAA.woff2",
+    "revision": "911d926608ce81ca8d62e74b7d09d276"
+  },
+  {
+    "url": "google-fonts/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2",
+    "revision": "43c849ea0258ce0d23a480e840881f16"
+  },
+  {
+    "url": "google-fonts/s/salsa/v9/gNMKW3FiRpKj-hmf-HY.woff2",
+    "revision": "281a1d85c8866fb591aea2470cd419a0"
+  },
+  {
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-e8e7fbb006d57d32ed40.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -48,7 +96,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "5bbd51e0fe0514261ec99a6b396343a2"
+    "revision": "6c9b6595461df728e176178be53db6ed"
   },
   {
     "url": "manifest.webmanifest",
@@ -145,7 +193,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/Portfolio/app-79d3bc51d2bbe0e10a6e.js`))) {
+  if (!resources || !(await caches.match(`/Portfolio/app-bec4ba576ec3303294ab.js`))) {
     return await fetch(event.request)
   }
 
