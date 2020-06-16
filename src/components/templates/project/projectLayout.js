@@ -3,8 +3,9 @@ import { graphql, Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import ProjectArchive from '../../projectArchive'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faGlobe, faImages } from '@fortawesome/free-solid-svg-icons'
 import Img from "gatsby-image"
+import Lightbox from '../../lightbox'
 import Layout from '../../layout'
 import styled from 'styled-components'
 import Author from '../../author'
@@ -78,6 +79,12 @@ const Container = styled.div`
             }
         }
     }
+    .lightboxContainer {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
     .mainPhoto {
         border-radius: 5px;
         width: 100%;
@@ -133,6 +140,8 @@ export default class projectLayout extends Component {
         const { html, frontmatter: { title, github, website, date, tags, primaryTech, category, subtitle } } = this.props.data.markdownRemark;
         const { location, pageContext: { next, prev } } = this.props;
         const image = this.props.data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
+        const lightboxImagesArray = this.props.data.markdownRemark.frontmatter.lightboxImages.map(image => (image.childImageSharp)) || [];
+        console.log(lightboxImagesArray)
         return (
             <Layout location={location}>
                 <Container>
@@ -143,6 +152,9 @@ export default class projectLayout extends Component {
                     <StyledHTML dangerouslySetInnerHTML={{
                         __html: html
                     }} />
+                    <div className="lightboxContainer">
+                        {lightboxImagesArray.length > 0 ? <Lightbox images={lightboxImagesArray}/> : null}
+                    </div>
                     <div className="metaInfo">
                         <div className="links">
                             <div className="link" ><a href={website} target="_blank"><FontAwesomeIcon icon={faGlobe}/></a></div>
@@ -197,6 +209,13 @@ export const query = graphql`
                       }
                    }
                 }
+                lightboxImages {
+                    childImageSharp {
+                      fluid (maxWidth: 800) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
             }
         }
     }

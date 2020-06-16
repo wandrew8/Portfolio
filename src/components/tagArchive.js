@@ -16,7 +16,7 @@ const ArchiveList = styled.ul`
 `;
 
 const POST_ARCHIVE_QUERY = graphql`
-query ProjectArchive {
+query TagArchive {
   allMarkdownRemark(limit: 10, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: DESC, fields: frontmatter___order}) {
     edges {
       node {
@@ -31,6 +31,8 @@ query ProjectArchive {
     }
   }
 }
+
+
 `
 
 const Archive = () => {

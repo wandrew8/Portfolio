@@ -9,6 +9,7 @@ tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./coral2.jpg
 order: 40
 primaryTech: "React"
+lightboxImages: [./coral2.jpg]
 github: "https://github.com/wandrew8/dictionaryApp"
 website: "https://wandrew8.github.io/dictionaryApp/#/"
 ---

@@ -13,26 +13,28 @@ const Tags = ({ pageContext, data }) => {
     } tagged with "${tag}"`
     return (
       <Layout>
-        <h1>{tagHeader}</h1>
-        <GridContainer>
-          {edges.map(edge => {
-            const { frontmatter: { slug, title, category, primaryTech, date, subtitle } } = edge.node
-            const image = edge.node.frontmatter.featuredImage.childImageSharp.fluid
-            console.log(image)
-            return (
-                <Post key={slug}>
-                    <Link to={`/projects${slug}`}>
-                    <Img className="projectImage" fluid={image} />
-                    <h2>{title}</h2>
-                    <p>{subtitle}</p>
-                    <Button>{category}</Button>
-                    <small>{date} | {primaryTech}</small>
-                    </Link>
-                </Post>
-            )
-          })}
-        </GridContainer>
-        <Link to="/tags">All tags</Link>
+        <div>
+            <h1>{tagHeader}</h1>
+            <GridContainer>
+            {edges.map(edge => {
+                const { frontmatter: { slug, title, category, primaryTech, date, subtitle } } = edge.node
+                const image = edge.node.frontmatter.featuredImage.childImageSharp.fluid
+                console.log(image)
+                return (
+                    <Post key={slug}>
+                        <Link to={`/projects${slug}`}>
+                        <Img className="projectImage" fluid={image} />
+                        <h2>{title}</h2>
+                        <p>{subtitle}</p>
+                        <Button>{category}</Button>
+                        <small>{date} | {primaryTech}</small>
+                        </Link>
+                    </Post>
+                )
+            })}
+            </GridContainer>
+            <Link to="/tags">All tags</Link>
+        </div>
       </Layout>
     )
   }

@@ -16,6 +16,25 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-interactive-gifs`,
+            options: {
+              root: `${__dirname}`,
+              src: `${__dirname}/src/gifs`,
+              dest: `${__dirname}/public/static/gifs`,
+              play: `${__dirname}/src/images/512x512.png`,
+              placeholder: `${__dirname}/src/images/512x512.png`,
+              loading: `${__dirname}/src/images/512x512.png`,
+              relativePath: `/static/gifs`
+            },
+          },
+        ]
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -74,6 +93,27 @@ module.exports = {
         path: `${__dirname}/src/posts`,
         name: 'posts'
       }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
     },
     'gatsby-transformer-remark'
   ],

@@ -8,29 +8,31 @@ const Tags = ({location}) => (
   <>
     <SEO title="Tags" />
     <Layout location={location}>
-        <h1>Tags</h1>
-        <StaticQuery 
-            query={TAG_QUERY}
-            render={({ allMarkdownRemark }) => {
-                return (
-                <div>
-                    {allMarkdownRemark.group.map(edge => {
-                        return (
-                            <Link key={edge.tag} to={`/tags/${kebabCase(edge.tag)}/`}>
-                                <h1>{edge.tag} ({edge.totalCount} {edge.totalCount > 1 ? "items" : "item"})</h1>
-                            </Link>
-                            
-                        )
-                    })}
-                </div>
-                )
-            }}
-
-        />
         <div>
-            <Link to="/tags">All Tags</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/posts">Blog Posts</Link>
+            <h1>Tags</h1>
+            <StaticQuery 
+                query={TAG_QUERY}
+                render={({ allMarkdownRemark }) => {
+                    return (
+                    <div>
+                        {allMarkdownRemark.group.map(edge => {
+                            return (
+                                <Link key={edge.tag} to={`/tags/${kebabCase(edge.tag)}/`}>
+                                    <h1>{edge.tag} ({edge.totalCount} {edge.totalCount > 1 ? "items" : "item"})</h1>
+                                </Link>
+                                
+                            )
+                        })}
+                    </div>
+                    )
+                }}
+
+            />
+            <div>
+                <Link to="/tags">All Tags</Link>
+                <Link to="/projects">Projects</Link>
+                <Link to="/posts">Blog Posts</Link>
+            </div>
         </div>
     </Layout>
   </>

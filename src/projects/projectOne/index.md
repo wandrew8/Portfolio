@@ -8,6 +8,7 @@ category: "E-Commerce"
 tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
 featuredImage: ./art2.jpg
 order: 50
+lightboxImages: [./art2.jpg, ./avatar.JPG]
 primaryTech: "JavaScript"
 github: "https://github.com/wandrew8/dictionaryApp"
 website: "https://wandrew8.github.io/dictionaryApp/#/"
