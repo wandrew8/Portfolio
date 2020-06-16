@@ -1,21 +1,26 @@
 ---
-slug: "/olaf-application"
-title: "Olaf"
-subtitle: "Location-Based, FoodCommerce Application"
+slug: "/dictionary-application"
+title: "Dictionary App"
+subtitle: "Educational, Vocabulary-Building Application"
 date: "2020-06-10"
 posttype: "project"
-category: "E-Commerce"
-tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
-featuredImage: ./art2.jpg
-order: 50
-lightboxImages: [./art2.jpg, ./avatar.JPG]
-primaryTech: "JavaScript"
+category: "Educational Game"
+tags:
+  [
+    "React",
+    "Third-Party-APIs",
+    "Styled Components",
+    "Authentication",
+    "Firebase",
+  ]
+featuredImage: ./featured.PNG
+order: 10
+lightboxImages: [./one.PNG, ./two.PNG, ./three.PNG, ./four.PNG, ./five.PNG]
+primaryTech: "React"
 github: "https://github.com/wandrew8/dictionaryApp"
 website: "https://wandrew8.github.io/dictionaryApp/#/"
 ---
 
-## Location-Based, FoodCommerce Application
+## Search, Save, and Review Tricky Vocabulary Words
 
-Olaf is a community-driven food service web application which offers both seller and customer interactivity. Users can create an account as either a customer or chef for different user experiences. As a chef, the user can create food items to post online. (Photos can be added to the online items through the use of Cloudinary.) Once the chef is online, their address is converted to geo-coordinates using the Geocoding API, and the chef's location is placed on a map using Google Maps API. Now the customer can search the map to find online chef's and shop for items to add to their cart. Once a customer has completed checkout, the customer and chef are notified of order details via text message through the use of Twilio. This application was created using React and MDBootstrap on the front end. Data is stored in a MySQL database with the use of Sequelize NPM.
-
-![What?](./news-collection.gif)
+The Dictionary App is a search and vocabulary building application. It allows users to search for words' definitions, save words to their collections, review words as flashcards, add their own words to their collection, take dynamically generated tests, and more. This handy application has a simple and clean design and smooth UI for individuals looking to improve their vocabulary. The UX is enhanced with additional features such as light/dark mode and other theming options which allows users to customize the app to suit their personalities. It utilizes third-party authorization and authentication through firebase. Data is stored and queried through the firebase firestore.

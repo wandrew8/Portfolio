@@ -1,19 +1,19 @@
 ---
-slug: "/dictionary-application"
-title: "Dictionary App"
-subtitle: "Dictionary Search and Vocabulary-Building Application"
-date: "2020-06-10"
+slug: "/pixel-images"
+title: "Pixel Images"
+subtitle: "Photo Sharing Social Media Application"
+date: "2020-04-20"
 posttype: "project"
-category: "Educative Game"
-tags: ["HTML", "CSS", "SCSS", "React", "Gatsby"]
-featuredImage: ./coral2.jpg
-order: 40
+category: "Social Media"
+tags: ["MERN", "MongoDB", "Node", "React", "SCSS", "Authentication"]
+featuredImage: ./featuredImage.PNG
+order: 20
+lightboxImages: [./one.PNG, ./two.PNG, ./three.PNG, ./four.PNG]
 primaryTech: "React"
-lightboxImages: [./coral2.jpg]
-github: "https://github.com/wandrew8/dictionaryApp"
-website: "https://wandrew8.github.io/dictionaryApp/#/"
+github: "https://github.com/wandrew8/Pixel-Images"
+website: "https://wandrew8.github.io/Pixel-Images/#/"
 ---
 
-## Check word meanings and learn new vocabulary!
+## Share Photos with all your friends!
 
-Dictionary is a community-driven food service web application which offers both seller and customer interactivity. Users can create an account as either a customer or chef for different user experiences. As a chef, the user can create food items to post online. (Photos can be added to the online items through the use of Cloudinary.) Once the chef is online, their address is converted to geo-coordinates using the Geocoding API, and the chef's location is placed on a map using Google Maps API. Now the customer can search the map to find online chef's and shop for items to add to their cart. Once a customer has completed checkout, the customer and chef are notified of order details via text message through the use of Twilio. This application was created using React and MDBootstrap on the front end. Data is stored in a MySQL database with the use of Sequelize NPM.
+Pixel Images is a full-stack MERN photo sharing and social media application. Pixel Image allows users to post images; view, like and comment on other images; register for an account; log into an existing account and more. Data is persistant through the use of MongoDB and authentication is through passport JWT strategy. The frontend was built using React and all components were created from scratch along with Sass for styling and CSS grid and flexbox for positioning and layout.

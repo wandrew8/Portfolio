@@ -118,12 +118,15 @@ const StyledImg = styled(Img)`
   & > img {
     object-fit: cover !important; 
     object-position: 0% 0% !important; 
+    
   }
 `
 
 const Gallery = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  margin: 3rem 0rem;
+  cursor: pointer;
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -146,6 +149,7 @@ const GalleryItem = styled.div`
 const Button = styled.button`
   background-color: transparent;
   border: none;
+  outline: none;
   .arrows {
     font-size: 1.5rem;
     color: ${variables.primaryLight};

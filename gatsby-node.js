@@ -24,7 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
         graphql(`
         {
-            postsGroup: allMarkdownRemark (sort: {order: ASC, fields: frontmatter___title}) {
+            postsGroup: allMarkdownRemark (sort: {order: ASC, fields: frontmatter___order}) {
               edges {
                 node {
                   frontmatter {

@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import ProjectArchive from '../../projectArchive'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faGlobe, faImages } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import Img from "gatsby-image"
 import Lightbox from '../../lightbox'
 import Layout from '../../layout'
@@ -57,7 +57,10 @@ const Container = styled.div`
         margin-bottom: 3rem;
     }
     .tags {
-        display: flex;
+        p {
+
+        display: inline;
+        }
         a {
             margin-left: 1rem;
             text-decoration: none;
@@ -77,6 +80,16 @@ const Container = styled.div`
             :hover {
                 color: ${variables.primaryDark};
             }
+        }
+    }
+    ul {
+        list-style: none;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 2rem;
+        li {
+            margin: 0;
+            padding: 0.2rem 0rem; 
         }
     }
     .lightboxContainer {
