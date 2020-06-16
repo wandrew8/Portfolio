@@ -81,8 +81,6 @@ const Container = styled.div`
     }
     .lightboxContainer {
         width: 100%;
-        height: 100px;
-        overflow: hidden;
         margin-bottom: 1rem;
     }
     .mainPhoto {

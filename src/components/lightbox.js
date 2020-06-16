@@ -1,25 +1,41 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { variables } from '../styles/variables'
 import Img from 'gatsby-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWindowClose, faArrowCircleRight, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons' 
 
 class Lightbox extends Component {
-  state = {
-    showLightbox: false,
-    selectedImage: 0,
+  constructor(props){
+    super(props);
+    this.state = {
+      showLightbox: false,
+      selectedImage: 0,
+    }
+    this.lightBoxRef = React.createRef();
   }
+  
 
   componentDidMount = () => {
     window.addEventListener('keyup', this.handleKeyUp, false)
+    window.addEventListener('click', this.handleClickCloseModal, true)
   }
 
   componentWillUnmount = () => {
     window.removeEventListener('keyup', this.handleKeyUp, false)
+    window.removeEventListener('click', this.handleClickCloseModal, true)
   }
 
   handleClick = (e, index) => {
     e.preventDefault()
     this.setState({ showLightbox: !this.state.showLightbox, selectedImage: index })
+  }
+
+  handleClickCloseModal = (e) => {
+    if (!this.lightBoxRef.current.contains(e.target)) {
+      this.setState({ showLightbox: false })
+    }
   }
 
   closeModal = () => {
@@ -73,18 +89,16 @@ class Lightbox extends Component {
         </Gallery>
 
         <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
-          <LightboxContent>
+          <LightboxContent ref={this.lightBoxRef}>
+            <FontAwesomeIcon className="closeIcon" icon={faWindowClose} onClick={this.closeModal}/>
             <Img fluid={images[selectedImage].fluid} />
             <Controls>
-              <Button onClick={this.closeModal}>Close</Button>
-              <LeftRight>
-                <Button onClick={this.goBack} disabled={selectedImage === 0}>
-                  Previous
-                </Button>
-                <Button onClick={this.goForward} disabled={selectedImage === images.length - 1}>
-                  Next
-                </Button>
-              </LeftRight>
+                {selectedImage === 0 ? <div></div> : <Button onClick={this.goBack}>
+                  <FontAwesomeIcon className="arrows" icon={faArrowCircleLeft} />
+                </Button>}
+                {selectedImage === images.length - 1 ? <div></div> : <Button onClick={this.goForward}>
+                  <FontAwesomeIcon className="arrows" icon={faArrowCircleRight} />
+                </Button>}
             </Controls>
           </LightboxContent>
         </LightboxModal>
@@ -129,7 +143,16 @@ const GalleryItem = styled.div`
   position: relative;
 `
 
-const Button = styled.button``
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  .arrows {
+    font-size: 1.5rem;
+    color: ${variables.primaryLight};
+    cursor: pointer;
+
+  }
+`
 
 const LightboxModal = styled.div`
   position: fixed;
@@ -150,17 +173,33 @@ const LightboxContent = styled.div`
   margin: 15px;
   max-width: 700px;
   width: 100%;
+  position: relative;
+  img {
+    border-radius: 10px;
+  }
+  .closeIcon {
+    position: absolute;
+    top: 7px;
+    right: 13px;
+    font-size: 1.5rem;
+    transition: 200ms ease-in-out;
+    color: ${variables.primaryDark};
+    cursor: pointer;
+    z-index: 10;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 `
 
 const Controls = styled.div`
   display: flex;
   justify-content: space-between;
-`
-
-const LeftRight = styled.div`
-  button:first-child {
-    margin-right: 10px;
-  }
+  padding: 0rem 2rem;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  
 `
 
 Lightbox.propTypes = {
