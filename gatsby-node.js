@@ -68,18 +68,6 @@ exports.createPages = ({ graphql, actions }) => {
                         next: index === (post.length - 1) ? null : post[index + 1].node.frontmatter.posttype === "post" ? null : post[index + 1].node,
                       }
                     });
-                  } else { // blog post
-                    createPage({
-                        path: `/posts${node.frontmatter.slug}`,
-                        component: path.resolve('./src/components/templates/post/postLayout.js'),
-                        context: {
-                        slug: node.frontmatter.slug,
-                        category: node.frontmatter.category,
-                        tags: node.frontmatter.tags,
-                        prev: index === 0 ? null : post[index - 1].node.frontmatter.posttype === "project" ? null : post[index - 1].node,
-                        next: index === (post.length - 1) ? null : post[index + 1].node.frontmatter.posttype === "project" ? null : post[index + 1].node,
-                    }  
-                    });
                   }
                 })
                 

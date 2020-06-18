@@ -2,7 +2,20 @@ import React from "react"
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { variables } from '../styles/variables'
 import { useStaticQuery, graphql } from "gatsby"
+
+const StyledAside = styled.aside`
+  min-width: 300px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  @media only screen and (max-width: ${variables.large}) {
+        grid-template-columns: 1fr;
+        min-width: none;
+        max-width: 600px;
+    }
+`;
 
 const ArchiveList = styled.ul`
     list-style: none;
@@ -16,20 +29,25 @@ const ArchiveList = styled.ul`
     }
     .title {
       font-weight: 500;
+      font-family: ${variables.headingFont};
       font-size: 1.2rem;
       margin: 0;
       padding: 0;
     }
     a {
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${variables.primaryFont};
         font-size: 0.8rem;
         text-decoration: none;
         color: #524567;
-
+        transition: 200ms linear;
+        &:hover {
+        box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.1);
+      }
     }
     .image {
       border-radius: 50%;
       height: 50px;
+      min-width: 50px;
       width: 50px;
       object-fit: cover;
       margin: 0rem 2rem 0.2rem 0.2rem;
@@ -71,7 +89,7 @@ const Archive = () => {
 
   return (
     <>
-      <aside>
+      <StyledAside>
           <h3>Top Projects</h3>
           <ArchiveList>
             {edges.map((edge) => {
@@ -90,7 +108,7 @@ const Archive = () => {
                )
             })}
           </ArchiveList>
-      </aside>
+      </StyledAside>
     </>
   )
 }

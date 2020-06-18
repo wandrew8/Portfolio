@@ -16,25 +16,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-interactive-gifs`,
-            options: {
-              root: `${__dirname}`,
-              src: `${__dirname}/src/gifs`,
-              dest: `${__dirname}/public/static/gifs`,
-              play: `${__dirname}/src/images/512x512.png`,
-              placeholder: `${__dirname}/src/images/512x512.png`,
-              loading: `${__dirname}/src/images/512x512.png`,
-              relativePath: `/static/gifs`
-            },
-          },
-        ]
-      },
-    },
-    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -85,13 +66,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/projects`,
         name: 'projects'
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/posts`,
-        name: 'posts'
       }
     },
     {

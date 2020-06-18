@@ -35,10 +35,18 @@ export const Button = styled.button`
 `;
 
 export const Post = styled.article`
-    box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.05);
+    box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.09);
     padding: 1rem;
-    border-radius: 4px;
+    border-radius: 10px;
     text-align: left;
+    transition: 200ms linear;
+    overflow: hidden;
+    &:hover {
+      box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.1);
+      & .projectImage {
+        transform: scale(1.01);
+      }
+    }
     .projectImage {
       width: 100%;
       max-width: 400px;
@@ -47,7 +55,7 @@ export const Post = styled.article`
       max-height: 230px;
       border-radius: 10px;
       margin: 0 auto;
-
+      transition: 200ms ease-out;
     }
     a {
         color: black;

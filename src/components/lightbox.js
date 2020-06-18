@@ -124,7 +124,7 @@ const StyledImg = styled(Img)`
 
 const Gallery = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: 3rem 0rem;
   cursor: pointer;
   @media (min-width: 700px) {

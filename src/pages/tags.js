@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Header from "../components/Header"
 import kebabCase from "lodash/kebabCase"
 import { Link, StaticQuery, graphql } from 'gatsby'
 import SEO from "../components/seo"
@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const Tags = ({location}) => (
   <>
     <SEO title="Tags" />
-    <Layout location={location}>
+        <Header/>
         <div>
             <h1>Tags</h1>
             <StaticQuery 
@@ -34,7 +34,6 @@ const Tags = ({location}) => (
                 <Link to="/posts">Blog Posts</Link>
             </div>
         </div>
-    </Layout>
   </>
 )
 
