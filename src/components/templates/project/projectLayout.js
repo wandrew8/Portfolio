@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import ProjectArchive from '../../projectArchive'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faGlobe, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import Img from "gatsby-image"
 import Lightbox from '../../lightbox'
 import Layout from '../../layout'
@@ -57,12 +57,16 @@ const Container = styled.div`
         margin-bottom: 3rem;
     }
     .tags {
+        width: 100%;
+        text-align: left;
         p {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
 
-        display: inline;
         }
         a {
-            margin-left: 1rem;
+            margin-right: 1rem;
             text-decoration: none;
             color: ${variables.primaryLightGray};
             transition: 100ms ease-in;
@@ -102,7 +106,7 @@ const Container = styled.div`
         cursor: pointer;
         margin: 1rem 0rem 3rem 0rem;
         &:hover .imageOverlay{
-            background: rgba(0,0,0,0.1);
+            background: rgba(0,0,0,0);
         }
         &:hover button{
             opacity: 1;
@@ -120,6 +124,8 @@ const Container = styled.div`
         }
         button {
             cursor: pointer;
+            letter-spacing: 1px;
+            font-weight: 400;
             transition: 200ms ease-in;
             position: absolute;
             opacity: 0;
@@ -128,22 +134,25 @@ const Container = styled.div`
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 1rem 3rem;
-            background: rgba(0,0,0,0.3);
             color: ${variables.primaryLight};
             font-size: 0.9rem;
             border-radius: 5px;
-            background-color: rgba(0,0,0,.4);
+            background-color: rgba(0,0,0,.6);
             text-decoration: none;
             font-weight: 400;
             text-transform: uppercase;
-            border-radius: 4px;
-            border: 1px solid ${variables.primaryLight};
+            border-radius: 10px;
+            border: 1px solid ${variables.primaryWhite};
             transition: .3s ease-in-out;
-            font-family: ${variables.primaryFont};
+            font-family: ${variables.buttonFont};
+            box-shadow: 0px 3px 30px rgba(25, 17, 34, 0.2);
             &:hover {
-                background: rgba(0,0,0,0.1);
-                box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.2);
+                background: rgba(0,0,0,0.3);
+                box-shadow: 0px 3px 30px rgba(25, 17, 34, 0.4);
 
+            }
+            .exLink {
+                margin-left: 0.5rem;
             }
         }
     }
@@ -219,7 +228,10 @@ export default class projectLayout extends Component {
                         <div className="imageOverlay"></div>
                         <Img className="mainPhoto" fluid={image} />
                         <a target="_blank" href={website}>
-                            <button>Visit Website</button>
+                            <button>
+                                VIEW
+                            <FontAwesomeIcon className="exLink" icon={faExternalLinkAlt} />
+                            </button>
                         </a>
                     </div>
                     <StyledHTML dangerouslySetInnerHTML={{
@@ -235,7 +247,7 @@ export default class projectLayout extends Component {
                         </div>
                         <div className="tags">
                             {tags.map(tag => (
-                                <Link to={`/tags/${kebabCase(tag)}`} ><p>#{tag}</p></Link>
+                                <Link to={`/tags/${kebabCase(tag)}`} ><p>#{tag}{`  `}</p></Link>
                             ))}
                         </div>
                     </div>

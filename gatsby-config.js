@@ -16,6 +16,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -36,6 +44,10 @@ module.exports = {
             variants: [`400`]
           },
           {
+            family: 'Montserrat',
+            variants: [`200`, `300`, `400`, `500`]
+          },
+          {
             family: `Open Sans`,
             variants: [`300`, `400`, `600`, `700`]
           },
@@ -46,6 +58,10 @@ module.exports = {
           {
             family: `Playfair Display`,
             variants: [`300`, `400`, `600`, `700`]
+          },
+          {
+            family: "Source Sans Pro",
+            variants: [`200`, `300`, `400`, `600`, `700`]
           }
         ],
       },

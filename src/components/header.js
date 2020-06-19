@@ -37,7 +37,8 @@ const HeaderContainer = styled.div`
       a {
         margin: 0rem 1.5rem;
         color: ${variables.primaryWhite};
-        font-family: ${variables.headingFont};
+        font-family: ${variables.nameFont};
+        font-weight: 200;
         text-transform: uppercase;
         text-decoration: none;
         transition: 300ms ease-out;
@@ -58,7 +59,7 @@ const HeaderContainer = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-    color: white;
+    color: ${variables.primaryWhite};
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -76,6 +77,8 @@ const Heading = styled.h1`
   display: inline;
   color: ${variables.primaryWhite};
   margin-left: 1.5rem;
+  font-family: ${variables.headingFont};
+
 `;
 
 const Header = () => {
@@ -98,7 +101,7 @@ const Header = () => {
       <HeaderWrapper header={header}>
       <HeaderContainer header={header} className={header ? "hidden" : ""}>
         <StyledLink to="/">
-          <img src={logo} alt="" />
+          {/* <img src={logo} alt="" /> */}
           <Heading>
               Andrew Weiss
           </Heading>

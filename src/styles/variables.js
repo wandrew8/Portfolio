@@ -15,14 +15,14 @@ export const variables = {
 
     //Typography Variables
     primaryFont: "'Open Sans', sans-serif;",
-    // nameFont: "'Kalam', cursive",
-    // nameFont: "'Codystar', cursive",
-    // headingFont: "'Raleway', sans-serif",
-    headingFont: "'Patua One', cursive",
-    // headingFont: "'Salsa', cursive",
+    // headingFont: "'Source Sans Pro', sans-serif",
+    // nameFont: "'Julius Sans One', sans-serif",
+    // nameFont: "'Raleway', sans-serif",
+    font: "'Patua One', cursive",
+    // font: "'Salsa', cursive",
     // secondaryFont: "'Roboto Slab', serif",
-    // secondaryFont: "'Julius Sans One', sans-serif",
-    // secondaryFont: "'Playfair Display', serif",
+    buttonFont: "'Playfair Display', serif",
+    headingFont: "'Montserrat', sans-serif",
 
     //Other Variables
     boxShadow: "2px 2px 5px rgba(0,0,0,0.2)",
