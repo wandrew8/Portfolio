@@ -7,14 +7,16 @@ export const variables = {
     primaryGray: "#292929",
     primaryLightGray: "#7f7f7f",
 
-    primaryBlue: "#264653",
-    primaryGreen: "#2a9d8f",
-    secondaryBlue: "#457b9d",
+    primaryBlue: "#0077B6",
+    secondaryBlue: "#0096C7",
+    primaryGreen: "#48CAE4",
     primaryRed: "#e76f51",
     primaryOrange: "#f4a261",
 
     //Typography Variables
     primaryFont: "'Open Sans', sans-serif;",
+    // nameFont: "'Kalam', cursive",
+    // nameFont: "'Codystar', cursive",
     // headingFont: "'Raleway', sans-serif",
     headingFont: "'Patua One', cursive",
     // headingFont: "'Salsa', cursive",

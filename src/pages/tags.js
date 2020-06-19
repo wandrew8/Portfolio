@@ -24,7 +24,7 @@ const Tags = ({location}) => (
                                   to={`/tags/${kebabCase(edge.tag)}/`}>
                                   <div className="tag">
                                     <h3>{edge.tag}</h3>
-                                    <p>({edge.totalCount} {edge.totalCount > 1 ? "items" : "item"})</p>
+                                    <p>({edge.totalCount} {edge.totalCount > 1 ? "projects" : "project"})</p>
                                   </div>
                                 </Link>
                                 

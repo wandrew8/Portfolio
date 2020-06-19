@@ -8,12 +8,12 @@ import { variables } from '../styles/variables'
 import "./layout.css"
 
 const MainWrapper = styled.main`
-  max-width: 90%;
+  width: 100%;
   margin: 0rem auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
-  padding: 1rem 0rem;
+  padding: 0rem;
   @media only screen and (max-width: ${variables.large}) {
         grid-template-columns: 1fr;
     }
@@ -36,8 +36,8 @@ const Layout = ({ children, location }) => {
     <App>
       <Header />
           <Spring 
-            from={{ height: location.pathname === '/' ? 50 : 100 }} 
-            to={{ height: location.pathname === '/' ? 100 : 50 }}>
+            from={{ height: location.pathname === '/' ? 100 : 150 }} 
+            to={{ height: location.pathname === '/' ? 150 : 100 }}>
             {styles => (
               <div style={{overflow: 'hidden', ...styles}}>
                 <Gradient/>

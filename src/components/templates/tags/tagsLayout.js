@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 const Tags = ({ pageContext, data }) => {
     const { tag } = pageContext
     const { edges, totalCount } = data.allMarkdownRemark
-    const tagHeader = `${totalCount} post${
+    const tagHeader = `${totalCount} project${
       totalCount === 1 ? "" : "s"
     } tagged with "${tag}"`
     return (
@@ -69,7 +69,7 @@ export const pageQuery = graphql`
             website
             featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
+                  fluid(quality: 100, maxWidth: 1000) {
                     ...GatsbyImageSharpFluid
                   }
                }

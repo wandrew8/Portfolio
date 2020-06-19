@@ -36,8 +36,8 @@ const Layout = ({ children, location }) => {
     <App>
       <Header />
           <Spring 
-            from={{ height: location.pathname === '/' ? 50 : 100 }} 
-            to={{ height: location.pathname === '/' ? 100 : 50 }}>
+            from={{ height: location.pathname === '/' ? 100 : 150 }} 
+            to={{ height: location.pathname === '/' ? 150 : 100 }}>
             {styles => (
               <div style={{overflow: 'hidden', ...styles}}>
                 <Gradient/>
