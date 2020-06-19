@@ -1,29 +1,36 @@
 import React from "react"
-import Header from "../components/Header"
+import Layout2 from "../components/layout2"
 import kebabCase from "lodash/kebabCase"
+import styled from 'styled-components'
+import { variables } from '../styles/variables'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import SEO from "../components/seo"
 
 const Tags = ({location}) => (
   <>
     <SEO title="Tags" />
-        <Header/>
+        <Layout2>
         <div>
             <h1>Tags</h1>
             <StaticQuery 
                 query={TAG_QUERY}
                 render={({ allMarkdownRemark }) => {
                     return (
-                    <div>
+                    <TagContainer>
                         {allMarkdownRemark.group.map(edge => {
                             return (
-                                <Link key={edge.tag} to={`/tags/${kebabCase(edge.tag)}/`}>
-                                    <h1>{edge.tag} ({edge.totalCount} {edge.totalCount > 1 ? "items" : "item"})</h1>
+                                <Link 
+                                  key={edge.tag} 
+                                  to={`/tags/${kebabCase(edge.tag)}/`}>
+                                  <div className="tag">
+                                    <h3>{edge.tag}</h3>
+                                    <p>({edge.totalCount} {edge.totalCount > 1 ? "items" : "item"})</p>
+                                  </div>
                                 </Link>
                                 
                             )
                         })}
-                    </div>
+                    </TagContainer>
                     )
                 }}
 
@@ -34,6 +41,7 @@ const Tags = ({location}) => (
                 <Link to="/posts">Blog Posts</Link>
             </div>
         </div>
+      </Layout2>
   </>
 )
 
@@ -50,3 +58,39 @@ query AllTags {
   }
 
 `
+
+const TagContainer = styled.div`
+  a {
+    text-decoration: none;
+    color: ${variables.primaryLight};
+
+  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  .tag {
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.15);
+    transition: 200ms linear;
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 0;
+      margin-bottom: 0.5rem;
+      padding: 0;
+    }
+    &:hover{
+      box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.2);
+
+    }
+  }
+`;

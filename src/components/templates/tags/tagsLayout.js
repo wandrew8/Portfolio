@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { GridContainer, Post, Button } from '../../projectListing'
 import Img from "gatsby-image"
-import Layout from '../../layout'
+import Layout2 from '../../layout2'
 import PropTypes from 'prop-types'
 
 const Tags = ({ pageContext, data }) => {
@@ -12,7 +12,7 @@ const Tags = ({ pageContext, data }) => {
       totalCount === 1 ? "" : "s"
     } tagged with "${tag}"`
     return (
-      <Layout>
+      <Layout2>
         <div>
             <h1>{tagHeader}</h1>
             <GridContainer>
@@ -35,7 +35,7 @@ const Tags = ({ pageContext, data }) => {
             </GridContainer>
             <Link to="/tags">All tags</Link>
         </div>
-      </Layout>
+      </Layout2>
     )
   }
 

@@ -16,10 +16,11 @@ export const variables = {
     //Typography Variables
     primaryFont: "'Open Sans', sans-serif;",
     // headingFont: "'Raleway', sans-serif",
-    // headingFont: "'Patua One', cursive",
+    headingFont: "'Patua One', cursive",
     // headingFont: "'Salsa', cursive",
-    // headingFont: "'Roboto Slab', serif",
-    headingFont: "'Julius Sans One', sans-serif",
+    // secondaryFont: "'Roboto Slab', serif",
+    // secondaryFont: "'Julius Sans One', sans-serif",
+    // secondaryFont: "'Playfair Display', serif",
 
     //Other Variables
     boxShadow: "2px 2px 5px rgba(0,0,0,0.2)",

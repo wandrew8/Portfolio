@@ -128,10 +128,10 @@ const Gallery = styled.div`
   margin: 3rem 0rem;
   cursor: pointer;
   @media (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
   @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
   @media (min-width: 1100px) {
     grid-template-columns: repeat(5, 1fr);

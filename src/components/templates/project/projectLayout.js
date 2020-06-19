@@ -96,11 +96,67 @@ const Container = styled.div`
         width: 100%;
         margin-bottom: 1rem;
     }
+    .imageContainer {
+        position: relative;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        margin: 1rem 0rem 3rem 0rem;
+        &:hover .imageOverlay{
+            background: rgba(0,0,0,0.1);
+        }
+        &:hover button{
+            opacity: 1;
+        }
+        .imageOverlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 30;
+            transition: .3s ease-in-out;
+            background: rgba(0,0,0,0);
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+            transition: 200ms ease-in;
+            position: absolute;
+            opacity: 0;
+            top: 50%;
+            z-index: 50;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1rem 3rem;
+            background: rgba(0,0,0,0.3);
+            color: ${variables.primaryLight};
+            font-size: 0.9rem;
+            border-radius: 5px;
+            background-color: rgba(0,0,0,.4);
+            text-decoration: none;
+            font-weight: 400;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid ${variables.primaryLight};
+            transition: .3s ease-in-out;
+            font-family: ${variables.primaryFont};
+            &:hover {
+                background: rgba(0,0,0,0.1);
+                box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.2);
+
+            }
+        }
+    }
     .mainPhoto {
         border-radius: 5px;
         width: 100%;
         max-width: 700px;
         margin: 0 auto;
+        transition: 200ms linear; 
+        box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.15);
+        &:hover {
+
+        }
     }
     .metaInfo {
         display: grid;
@@ -159,7 +215,13 @@ export default class projectLayout extends Component {
                     <h1>{title}</h1>
                     <p className="subtitle">{subtitle}</p>
                     <Author date={date} category={category} primaryTech={primaryTech} />
-                    <Img className="mainPhoto" fluid={image} />
+                    <div className="imageContainer">
+                        <div className="imageOverlay"></div>
+                        <Img className="mainPhoto" fluid={image} />
+                        <a target="_blank" href={website}>
+                            <button>Visit Website</button>
+                        </a>
+                    </div>
                     <StyledHTML dangerouslySetInnerHTML={{
                         __html: html
                     }} />

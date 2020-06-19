@@ -20,6 +20,7 @@ const StyledLink = styled(Link)`
     color: white;
     text-decoration: none;
     display: flex;
+    align-items: center;
     img {
       width: 50px;
       height: 50px;
@@ -32,7 +33,8 @@ const StyledLink = styled(Link)`
 const Heading = styled.h1`
   margin: 0;
   display: inline;
-  color: ${variables.primaryWhite}
+  color: ${variables.primaryWhite};
+  margin-left: 1.5rem;
 `;
 
 const Header = () => (

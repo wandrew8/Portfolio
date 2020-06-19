@@ -43,6 +43,10 @@ module.exports = {
             family: `Raleway`,
             variants: [`200`, `300`, `400`, `600`, `700`]
           },
+          {
+            family: `Playfair Display`,
+            variants: [`300`, `400`, `600`, `700`]
+          }
         ],
       },
     },
