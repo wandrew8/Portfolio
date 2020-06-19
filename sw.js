@@ -27,21 +27,37 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-db97e17b5fe4f9b8e42c.js"
+    "url": "webpack-runtime-58fdfdd126fa0875ed2b.js"
   },
   {
-    "url": "framework-f2b1673255104281184a.js"
+    "url": "framework-6e1ce7bd1c56d36ddf6c.js"
   },
   {
-    "url": "app-bec4ba576ec3303294ab.js"
+    "url": "app-3d756635dc8929126e26.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "e38ff6c8b6b07b1e6b846b837d143546"
+    "revision": "21b2e0143f9ee47c9cbe7f9a6c44726b"
   },
   {
     "url": "google-fonts/s/juliussansone/v8/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2",
     "revision": "cfdae712dfd393ac61f0245c0fb7d9c6"
+  },
+  {
+    "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_aZA3gnD_g.woff2",
+    "revision": "85d5ef9db7f2dc6979172a4a3b2c57cb"
+  },
+  {
+    "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2",
+    "revision": "7c3daf12b706645b5d3710f863a4da04"
+  },
+  {
+    "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2",
+    "revision": "92d16e458625f4d2c8940f6bdca0ff09"
+  },
+  {
+    "url": "google-fonts/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+    "revision": "bc3aa95dca08f5fee5291e34959c27bc"
   },
   {
     "url": "google-fonts/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2",
@@ -88,6 +104,22 @@ self.__precacheManifest = [
     "revision": "281a1d85c8866fb591aea2470cd419a0"
   },
   {
+    "url": "google-fonts/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2",
+    "revision": "899c8f78ce650d4009d42443897aa723"
+  },
+  {
+    "url": "google-fonts/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2",
+    "revision": "c85615b296302af51e683eecb5e371d4"
+  },
+  {
+    "url": "google-fonts/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2",
+    "revision": "1a4bcb3ec9c508d478d4dbf6b56f6208"
+  },
+  {
+    "url": "google-fonts/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2",
+    "revision": "ede18477b85a5d781cd2f4001ecc5e67"
+  },
+  {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-e8e7fbb006d57d32ed40.js"
   },
   {
@@ -96,7 +128,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "1e27a81913984a301c255819a6a49790"
+    "revision": "bdd81985089a7743635c7d24a913ab00"
   },
   {
     "url": "manifest.webmanifest",
@@ -193,7 +225,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/Portfolio/app-bec4ba576ec3303294ab.js`))) {
+  if (!resources || !(await caches.match(`/Portfolio/app-3d756635dc8929126e26.js`))) {
     return await fetch(event.request)
   }
 
