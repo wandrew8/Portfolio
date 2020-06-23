@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Spring } from 'react-spring/renderprops'
+import HeaderDrawer from './HeaderDrawer'
 import styled from 'styled-components'
 import Header from "./header"
 import App from './app'
@@ -32,9 +33,19 @@ const Gradient = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
+  const [ width, setWidth ] = useState(window.innerWidth);
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", updateWindowDimensions);
+    // Specify how to clean up after this effect:
+    return function cleanup() {
+      window.removeEventListener("resize", updateWindowDimensions);    };
+  });
   return (
     <App>
-      <Header />
+      {width > 756 ? <Header /> : <HeaderDrawer />}
           <Spring 
             from={{ height: location.pathname === '/' ? 100 : 150 }} 
             to={{ height: location.pathname === '/' ? 150 : 100 }}>

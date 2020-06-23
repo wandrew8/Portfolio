@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { Spring } from 'react-spring/renderprops'
 import styled from 'styled-components'
 import Header from "./header"
+import HeaderDrawer from './headerDrawer'
 import App from './app'
 import { variables } from '../styles/variables'
 import "./layout.css"
@@ -26,19 +26,22 @@ const Gradient = styled.div`
   background: linear-gradient(90deg, ${variables.primaryBlue}, ${variables.primaryGreen});
 `;
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children }) => {
+  const [ width, setWidth ] = useState(window.innerWidth);
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      console.log(window.innerWidth)
+      console.log(window)
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", updateWindowDimensions);
+    // Specify how to clean up after this effect:
+    return function cleanup() {
+      window.removeEventListener("resize", updateWindowDimensions);    };
+  });
   return (
     <App>
-      <Header />
-          <Spring 
-            from={{ height: location.pathname === '/' ? 100 : 150 }} 
-            to={{ height: location.pathname === '/' ? 150 : 100 }}>
-            {styles => (
-              <div style={{overflow: 'hidden', ...styles}}>
-                <Gradient/>
-              </div>
-            )}
-          </Spring>
+      {width > 756 ? <Header /> : <HeaderDrawer />}
         <MainWrapper>
             {children}
         </MainWrapper>
@@ -48,10 +51,6 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
-
-Layout.defaultProps = {
-  location: {},
 }
 
 export default Layout

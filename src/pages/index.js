@@ -34,12 +34,11 @@ const image = data.file.childImageSharp.fluid
 
 return (
   <Layout3>
-      <SEO title="Home" />
+      {/* <SEO title="Home" /> */}
       <ReactFullpage
         navigation
         arrowNavigation
         verticalAlign = {true}
-        sectionPaddingTop ="200px"
         setAllowScrolling = {false}
         scrollingSpeed = {1000}
         paddingTop = "-100px"
@@ -47,12 +46,10 @@ return (
           return(
             <ReactFullpage.Wrapper>
                 <SectionOne className="section">
-                  <div className="intro">
                       <div>
                         <h2 className="mainName">Andrew Weiss</h2>
                         <h3>Frontend Web Developer</h3>
                       </div>
-                  </div>
                 </SectionOne>
                 <SectionTwo className="section">
                     <Overlay />
@@ -179,6 +176,8 @@ const SectionTwo = styled.section`
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
+    padding-top: 100px;
+    padding: 50px 2rem 0rem 2rem;
     align-items: center;
     h2 {
       color: ${variables.primaryWhite};
@@ -253,6 +252,7 @@ const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.1);
   clip-path: circle(60.8% at 43% 20%);
   z-index: 29;
+  top: 0;
 
 `;
 
