@@ -1,95 +1,109 @@
 import React from "react"
-import Layout2 from "../components/layout2"
+import Layout3 from "../components/layout3"
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import {useSpring, animated} from 'react-spring'
 import { variables } from '../styles/variables'
 import { useStaticQuery, graphql } from 'gatsby'
+import ReactFullpage from '@fullpage/react-fullpage';
 import SEO from "../components/seo"
+
+
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query avatarQuery {
-      site {
-        siteMetadata {
-          title
+      query avatarQuery {
+        site {
+          siteMetadata {
+            title
+          }
         }
-      }
-      file(relativePath: {
-        regex: "/avatar/"
-      }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_tracedSVG
+        file(relativePath: {
+          regex: "/avatar/"
+        }) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
-    }
   `)
-  const image = data.file.childImageSharp.fluid
-  const props = useSpring({opacity: 1, from: {opacity: 0}})
-  return(
-    <>
-    <Layout2>
-      <SEO title="Home" />
-        <div>
-          <SectionOne>
-            <animated.div style={props} className="intro">
-                <div>
-                  <h2 className="mainName">Andrew Weiss</h2>
-                  <h3>Frontend Web Developer</h3>
-                </div>
-            </animated.div>
-          </SectionOne>
-          <SectionTwo>
-              <Overlay />
-              <div className="grid">
-                <div className="top">
-                  <h2 className="title">Andrew</h2>
-                  <h2 className="title">Weiss</h2>
 
-                  <h3 className="subtext">A hands-on creative with a passion for building beautiful websites</h3>
-                  <p>Andrew has been responsible for bringing concepts to life for clients such as Nintendo, Estée Lauder, Oxfam, Scribner, Sony, and many others. His work has been recognised by One Show, ADC, Webby Awards, and Cannes Lions. When Jonny isn't busy educating people on the difference between fonts and typefaces, he can be found taking part in competitive tickling competitions across the UK.</p>
-                </div>
-                <Img className="avatarImage" fluid={image} alt="profile image"/>
-              </div>
-          </SectionTwo>
-          <SectionThree>
-            <div className="top">
-              <h2>Skills</h2>
-              <hr/>
-              <SkillsContainer>
-                <div className="frontEnd">
-                  <h3>Frontend</h3>
-                </div>
-                <div className="backEnd">
-                  <h3>Backend</h3>
-                </div>
-              </SkillsContainer>
-            </div>
-          </SectionThree>
-          <SectionFour>
-            <Overlay />
-            <div className="top">
-              <h1>Top Projects</h1>
-            </div>
-          </SectionFour>
-        </div>
-      </Layout2>
-    </>
+const image = data.file.childImageSharp.fluid
+
+return (
+  <Layout3>
+      <SEO title="Home" />
+      <ReactFullpage
+        navigation
+        arrowNavigation
+        verticalAlign = {true}
+        sectionPaddingTop ="200px"
+        setAllowScrolling = {false}
+        scrollingSpeed = {1000}
+        paddingTop = "-100px"
+        render={() => {
+          return(
+            <ReactFullpage.Wrapper>
+                <SectionOne className="section">
+                  <div className="intro">
+                      <div>
+                        <h2 className="mainName">Andrew Weiss</h2>
+                        <h3>Frontend Web Developer</h3>
+                      </div>
+                  </div>
+                </SectionOne>
+                <SectionTwo className="section">
+                    <Overlay />
+                    <div className="grid">
+                      <div className="top">
+                        <h2 className="title">Andrew</h2>
+                        <h2 className="title">Weiss</h2>
+
+                        <h3 className="subtext">A hands-on creative with a passion for building beautiful websites</h3>
+                        <p>Andrew has been responsible for bringing concepts to life for clients such as Nintendo, Estée Lauder, Oxfam, Scribner, Sony, and many others. His work has been recognised by One Show, ADC, Webby Awards, and Cannes Lions. When Jonny isn't busy educating people on the difference between fonts and typefaces, he can be found taking part in competitive tickling competitions across the UK.</p>
+                      </div>
+                      <Img className="avatarImage" fluid={image} alt="profile image"/>
+                    </div>
+                </SectionTwo>
+                <SectionThree className="section">
+                  <div className="top">
+                    <h2>Skills</h2>
+                    <hr/>
+                    <SkillsContainer>
+                      <div className="frontEnd">
+                        <h3>Frontend</h3>
+                      </div>
+                      <div className="backEnd">
+                        <h3>Backend</h3>
+                      </div>
+                    </SkillsContainer>
+                  </div>
+                </SectionThree>
+                <SectionFour className="section">
+                  <Overlay />
+                  <div className="top">
+                    <h1>Top Projects</h1>
+                  </div>
+                </SectionFour>
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
+    </Layout3>
   )
-}
+};
 
 export default IndexPage
 
 const SectionOne = styled.div`
-  height: 100%;
-  min-height: calc(100vh - 100px);
   display: grid;
   margin: 0;
   padding: 0;
   position: relative;
   width: 100vw;
+  height: 150vh;
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
@@ -147,8 +161,6 @@ const SectionOne = styled.div`
   }
 `;
 const SectionTwo = styled.section`
-  height: 100%;
-  min-height: 100vh;
   display: grid;
   margin: 0;
   padding: 0;
@@ -158,7 +170,7 @@ const SectionTwo = styled.section`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  background: linear-gradient(90deg, ${variables.primaryBlue}, ${variables.secondaryBlue});
+  background: linear-gradient(45deg, ${variables.primaryBlue}, ${variables.secondaryBlue}, ${variables.primaryGreen});
   color: ${variables.primaryWhite};
   .grid {
     display: grid;
@@ -176,7 +188,7 @@ const SectionTwo = styled.section`
     }
   }
   .title {
-    font-size: 4rem;
+    font-size: 3.4rem;
     font-family: ${variables.headingFont};
   }
   .subtext {
@@ -190,9 +202,9 @@ const SectionTwo = styled.section`
     margin: 0 auto;
     height: 80vh;
     min-height: 300px;
-    max-height: 500px;
+    max-height: 400px;
     min-width: 300px;
-    max-width: 400px;
+    max-width: 300px;
     width: 90vw;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
@@ -206,8 +218,6 @@ const SectionTwo = styled.section`
 `;
 
 const SectionThree = styled.div`
-  height: 100%;
-  min-height: 100vh;
   display: grid;
   margin: 0;
   padding: 0;
@@ -225,8 +235,6 @@ const SectionThree = styled.div`
 `;
 
 const SectionFour = styled.div`
-  height: 100%;
-  min-height: 100vh;
   display: grid;
   margin: 0;
   padding: 0;
@@ -244,7 +252,6 @@ const Overlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.1);
   clip-path: circle(60.8% at 43% 20%);
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
   z-index: 29;
 
 `;

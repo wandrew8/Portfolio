@@ -99,20 +99,20 @@ const Header = () => {
   }, [scrollListener]);
   return(
       <HeaderWrapper header={header}>
-      <HeaderContainer header={header} className={header ? "hidden" : ""}>
-        <StyledLink to="/">
-          {/* <img src={logo} alt="" /> */}
-          <Heading>
-              Andrew Weiss
-          </Heading>
-        </StyledLink>
-        <div className="links">
-          <Link activeClassName="active" to="/projects">Projects</Link>
-          <Link activeClassName="active" to="/style">Styles</Link>
-          <Link activeClassName="active" to="/">About</Link>
-        </div>
-      </HeaderContainer>
-    </HeaderWrapper>
+        <HeaderContainer header={header} className={header ? "hidden" : ""}>
+          <StyledLink to="/">
+            {/* <img src={logo} alt="" /> */}
+            <Heading>
+                Andrew Weiss
+            </Heading>
+          </StyledLink>
+          <div className="links">
+            <Link activeClassName="active" to="/projects">Projects</Link>
+            <Link activeClassName="active" to="/style">Styles</Link>
+            <Link activeClassName="active" to="/">About</Link>
+          </div>
+        </HeaderContainer>
+      </HeaderWrapper>
     )
 }
 

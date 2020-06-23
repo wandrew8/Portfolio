@@ -60,7 +60,7 @@ const ArchiveList = styled.ul`
 
 const POST_ARCHIVE_QUERY = graphql`
 query ProjectArchive {
-  allMarkdownRemark(limit: 10, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
+  allMarkdownRemark(limit: 5, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
     edges {
       node {
         frontmatter {

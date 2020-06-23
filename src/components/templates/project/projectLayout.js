@@ -139,10 +139,10 @@ const Container = styled.div`
             border-radius: 5px;
             background-color: rgba(0,0,0,.6);
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 200;
             text-transform: uppercase;
             border-radius: 10px;
-            border: 1px solid ${variables.primaryWhite};
+            border: 1px solid rgba(0,0,0,0.5);
             transition: .3s ease-in-out;
             font-family: ${variables.buttonFont};
             box-shadow: 0px 3px 30px rgba(25, 17, 34, 0.2);
@@ -229,7 +229,7 @@ export default class projectLayout extends Component {
                         <Img className="mainPhoto" fluid={image} />
                         <a target="_blank" href={website}>
                             <button>
-                                VIEW
+                                Visit
                             <FontAwesomeIcon className="exLink" icon={faExternalLinkAlt} />
                             </button>
                         </a>

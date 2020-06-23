@@ -91,7 +91,7 @@ class Lightbox extends Component {
         <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
           <LightboxContent ref={this.lightBoxRef}>
             <FontAwesomeIcon className="closeIcon" icon={faWindowClose} onClick={this.closeModal}/>
-            <Img fluid={images[selectedImage].fluid} />
+            <Img className="image" fluid={images[selectedImage].fluid} />
             <Controls>
                 {selectedImage === 0 ? <div></div> : <Button onClick={this.goBack}>
                   <FontAwesomeIcon className="arrows" icon={faArrowCircleLeft} />
@@ -180,6 +180,7 @@ const LightboxContent = styled.div`
   position: relative;
   img {
     border-radius: 10px;
+    
   }
   .closeIcon {
     position: absolute;

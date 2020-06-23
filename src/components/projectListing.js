@@ -82,7 +82,7 @@ export const Post = styled.article`
 
 const LISTING_QUERY = graphql`
 query ProjectPostListing {
-allMarkdownRemark(limit: 5, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
+allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
       edges {
         node {
           frontmatter {
