@@ -164,6 +164,7 @@ const LightboxModal = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
+  max-height: 800px;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -180,7 +181,6 @@ const LightboxContent = styled.div`
   position: relative;
   img {
     border-radius: 10px;
-    
   }
   .closeIcon {
     position: absolute;

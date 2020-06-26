@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: ${variables.headingFont};
     color: ${variables.primaryBlue};
     font-weight: 300;
-    margin: 2rem 0rem;
+    margin: 2rem 1rem;
 }
 h1, h2, h3 {
     text-transform: uppercase;

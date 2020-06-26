@@ -9,6 +9,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fit, 300px);
   grid-gap: 1rem;
   justify-content: center;
+  padding: 2rem;
   @media only screen and (max-width: ${variables.medium}) {
         h2 {
           font-size: 1.2rem;
@@ -42,7 +43,8 @@ export const Post = styled.article`
     transition: 200ms linear;
     overflow: hidden;
     cursor: pointer;
-
+    z-index: 200;
+    background-color: ${variables.primaryWhite};
     &:hover {
       box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.1);
       & .projectImage {
@@ -82,9 +84,9 @@ export const Post = styled.article`
     }
 `;
 
-const LISTING_QUERY = graphql`
-query ProjectPostListing {
-allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
+const TOP_PROJECTS = graphql`
+query FindTopProjects {
+allMarkdownRemark(limit: 3, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
       edges {
         node {
           frontmatter {
@@ -110,7 +112,7 @@ allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "project"}}}
 
 const Listing = () => (
   <StaticQuery 
-    query={LISTING_QUERY}
+    query={TOP_PROJECTS}
     render={({ allMarkdownRemark }) => {
         return (
             <GridContainer>

@@ -43,11 +43,6 @@ const Tags = ({location}) => (
                 }}
 
             />
-            <div>
-                <Link to="/tags">All Tags</Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/posts">Blog Posts</Link>
-            </div>
         </div>
       </Layout2>
   </>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { variables } from '../../../styles/variables'
 import { GridContainer, Post, Button } from '../../projectListing'
+import styled from 'styled-components'
 import Img from "gatsby-image"
 import Layout2 from '../../layout2'
 import PropTypes from 'prop-types'
@@ -33,7 +35,7 @@ const Tags = ({ pageContext, data }) => {
                 )
             })}
             </GridContainer>
-            <Link to="/tags">All tags</Link>
+            <StyledLink className="tags" to="/tags">All tags</StyledLink>
         </div>
       </Layout2>
     )
@@ -80,7 +82,8 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// tagsLayout.propTypes = {
-//     pageContext: PropTypes.object,
-// }
+const StyledLink = styled(Link)`
+  color: ${variables.primaryDark};
+  text-decoration: none;
+  padding-top: 20rem;
+`;

@@ -11,6 +11,7 @@ import "./layout.css"
 const MainWrapper = styled.main`
   max-width: 90%;
   margin: 0rem auto;
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 1rem;

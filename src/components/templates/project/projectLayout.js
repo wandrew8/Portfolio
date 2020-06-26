@@ -103,7 +103,6 @@ const Container = styled.div`
     .imageContainer {
         position: relative;
         transition: .3s ease-in-out;
-        cursor: pointer;
         margin: 1rem 0rem 3rem 0rem;
         &:hover .imageOverlay{
             background: rgba(0,0,0,0);
@@ -132,6 +131,7 @@ const Container = styled.div`
             top: 50%;
             z-index: 50;
             left: 50%;
+            outline: none;
             transform: translate(-50%, -50%);
             padding: 1rem 3rem;
             color: ${variables.primaryLight};
@@ -139,12 +139,12 @@ const Container = styled.div`
             border-radius: 5px;
             background-color: rgba(0,0,0,.6);
             text-decoration: none;
-            font-weight: 200;
+            font-weight: 300;
             text-transform: uppercase;
             border-radius: 10px;
             border: 1px solid rgba(0,0,0,0.5);
             transition: .3s ease-in-out;
-            font-family: ${variables.buttonFont};
+            font-family: ${variables.headingFont};
             box-shadow: 0px 3px 30px rgba(25, 17, 34, 0.2);
             &:hover {
                 background: rgba(0,0,0,0.3);
@@ -229,8 +229,7 @@ export default class projectLayout extends Component {
                         <Img className="mainPhoto" fluid={image} />
                         <a target="_blank" href={website}>
                             <button>
-                                Visit
-                            <FontAwesomeIcon className="exLink" icon={faExternalLinkAlt} />
+                                Visit Site
                             </button>
                         </a>
                     </div>

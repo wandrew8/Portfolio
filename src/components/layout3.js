@@ -10,6 +10,7 @@ import "./layout.css"
 const MainWrapper = styled.main`
   width: 100%;
   margin: 0rem auto;
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
