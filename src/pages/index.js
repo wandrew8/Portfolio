@@ -78,17 +78,17 @@ return (
                           <i></i>
                         </div>
                         <ul>
-                          <li>CSS</li>
-                          <li>SCSS / Sass</li>
-                          <li>Styled Components</li>
-                          <li>HTML / HTML5</li>
-                          <li>JavaScript</li>
-                          <li>React</li>
-                          <li>React Native</li>
-                          <li>Gatsby</li>
-                          <li>Bootstrap</li>
-                          <li>Material UI</li>
-                          <li>Mobile Responsive Design</li>
+                          <Link><li>CSS</li></Link>
+                          <Link to="/tags/scss"><li>SCSS / Sass</li></Link>
+                          <Link to="/tags/styled-components"><li>Styled Components</li></Link>
+                          <Link to="/tags/html"><li>HTML / HTML5</li></Link>
+                          <Link to="/tags/java-script"><li>JavaScript</li></Link>
+                          <Link to="/tags/react"><li>React</li></Link>
+                          <Link to="/tags/react-native"><li>React Native</li></Link>
+                          <Link to="/tags/gatsby"><li>Gatsby</li></Link>
+                          <Link to="/tags/bootstrap"><li>Bootstrap</li></Link>
+                          <Link to="/tags/material-ui"><li>Material UI</li></Link>
+                          <Link to="/tags/mobile-responsives"><li>Mobile Responsive Design</li></Link>
                         </ul>
                       </div>
                       <div className="backEnd">
@@ -97,17 +97,16 @@ return (
                         <i></i>
                       </div>
                         <ul className="backendList">
-                          <li>Node.js</li>
-                          <li>Express</li>
-                          <li>MySQL</li>
-                          <li>MongoDB</li>
-                          <li>MVC and FLUX Architecture</li>
-                          <li>Agile workflow</li>
-                          <li>Authentication</li>
-                          <li>RESTful APIs</li>
-                          <li>Redux</li>
-                          <li>GIT</li>
-                          <li>CLI</li>
+                          <Link to="/tags/node"><li>Node.js</li></Link>
+                          <Link to="/tags/express"><li>Express</li></Link>
+                          <Link to="/tags/mySQL"><li>MySQL</li></Link>
+                          <Link to="/tags/mongo-db"><li>MongoDB</li></Link>
+                          <Link to="/tags/mvc"><li>MVC and FLUX Architecture</li></Link>
+                          <Link to="/tags/agile"><li>Agile workflow</li></Link>
+                          <Link to="/tags/authentication"><li>Authentication</li></Link>
+                          <Link to="/tags/API"><li>RESTful APIs</li></Link>
+                          <Link to="/tags/git"><li>GIT</li></Link>
+                          <Link to="/tags/cli"><li>CLI</li></Link>
                         </ul>
                       </div>
                     </SkillsContainer>
@@ -275,7 +274,7 @@ const SectionThree = styled.div`
   
 `;
 
-const Button = styled.div`
+export const Button = styled.div`
     padding: 0.2rem 0.5rem;
     text-align: center;
     border-radius: 5px;
@@ -358,11 +357,14 @@ const SkillsContainer = styled.div`
     @media only screen and (max-width: ${variables.small}) {
         grid-template-columns: 1fr;
     }
+    a {
+      color: ${variables.primaryDark};
+      text-decoration: none;
+    }
     ul {
       list-style: none;
       text-align: left;
       margin: 0rem;
-      transform: translateX(10px);
       background-color: ${variables.primaryLight};
       padding: 1.5rem 0.75rem;
       border-radius: 0px 0px 10px 10px;
@@ -394,12 +396,11 @@ const SkillsContainer = styled.div`
     }
     }
     .ribbonOpposite {
-      width: 400px;
+      width: 100%;
         height: 60px;
         margin: 0px auto 0px;
         font-family: ${variables.headingFont};
         font-weight: 300;
-        width: calc(100% + 10px);
         border-radius: 10px 10px 0px 0px;
         background: ${variables.secondaryBlue};
         position: relative;
@@ -419,12 +420,11 @@ const SkillsContainer = styled.div`
       }
     }
       .ribbon {
-        width: 400px;
+        width: 100%;
         height: 60px;
         margin: 0px auto 0px;
         font-family: ${variables.headingFont};
         font-weight: 300;
-        width: calc(100% + 10px);
         border-radius: 10px 10px 0px 0px;
         background: ${variables.secondaryBlue};
         position: relative;

@@ -246,7 +246,7 @@ export default class projectLayout extends Component {
                         </div>
                         <div className="tags">
                             {tags.map(tag => (
-                                <Link to={`/tags/${kebabCase(tag)}`} ><p>#{tag}{`  `}</p></Link>
+                                <Link key={tag} to={`/tags/${kebabCase(tag)}`} ><p>#{tag}{`  `}</p></Link>
                             ))}
                         </div>
                     </div>

@@ -28,15 +28,13 @@ const Gradient = styled.div`
 `;
 
 const Layout = ({ children }) => {
-  const [ width, setWidth ] = useState(window.innerWidth);
+  const [ width, setWidth ] = useState();
   useEffect(() => {
     const updateWindowDimensions = () => {
-      console.log(window.innerWidth)
-      console.log(window)
       setWidth(window.innerWidth);
     }
+    setWidth(window.innerWidth);
     window.addEventListener("resize", updateWindowDimensions);
-    // Specify how to clean up after this effect:
     return function cleanup() {
       window.removeEventListener("resize", updateWindowDimensions);    };
   });

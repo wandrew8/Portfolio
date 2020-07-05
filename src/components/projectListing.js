@@ -9,6 +9,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fit, 300px);
   grid-gap: 1rem;
   justify-content: center;
+  margin-bottom: 2.5rem;
   @media only screen and (max-width: ${variables.medium}) {
         h2 {
           font-size: 1.2rem;

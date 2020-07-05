@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Img from "gatsby-image"
 import Layout2 from '../../layout2'
 import PropTypes from 'prop-types'
+import { ButtonBase } from '@material-ui/core'
 
 const Tags = ({ pageContext, data }) => {
     const { tag } = pageContext
@@ -35,7 +36,7 @@ const Tags = ({ pageContext, data }) => {
                 )
             })}
             </GridContainer>
-            <StyledLink className="tags" to="/tags">All tags</StyledLink>
+            <StyledButton><Link to="/tags">View All tags</Link></StyledButton>
         </div>
       </Layout2>
     )
@@ -82,8 +83,37 @@ export const pageQuery = graphql`
     }
   }
 `
-const StyledLink = styled(Link)`
-  color: ${variables.primaryDark};
-  text-decoration: none;
-  padding-top: 20rem;
+
+const StyledButton = styled.div`
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 100;
+    border: solid 2px ${variables.primaryBlue};
+    transition: 300ms ease-in;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    max-width: 250px;
+    margin: 0 auto;
+    background-color: ${variables.primaryBlue};
+    a {
+      text-decoration: none;
+      color: ${variables.primaryWhite};
+      font-family: ${variables.headingFont};
+      font-weight: 300;
+      cursor: pointer;
+    }
+    &:hover {
+      border: solid 2px ${variables.primaryBlue};
+      background: rgba(253, 253, 254, 0.7);
+      a {
+      text-decoration: none;
+      color: ${variables.primaryBlue};
+    }
+    }
+    @media only screen and (max-width: ${variables.medium}) {
+        margin-bottom: 2rem;
+    }
+   
 `;
