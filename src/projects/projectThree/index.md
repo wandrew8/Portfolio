@@ -1,11 +1,12 @@
 ---
 slug: "/olaf"
 title: "Olaf Community Kitchen"
-subtitle: "A community kitchen application for selling and purchasing takeout food"
+subtitle: "Food Commerce Application"
 date: "2019-11-25"
 posttype: "project"
 category: "E-Commerce"
-tags: ["React", "MySQL", "Bootstrap", "Authentication", "CSS"]
+tags:
+  ["React", "MySQL", "Bootstrap", "Authentication", "CSS", "Third-Party-APIs"]
 featuredImage: ./featuredImage.PNG
 order: 30
 lightboxImages:

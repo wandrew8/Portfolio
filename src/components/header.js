@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { variables } from '../styles/variables'
 import styled from 'styled-components'
 import logo from '../images/512x512.png'
+import pdf from '../images/TechResume.pdf';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -107,9 +108,10 @@ const Header = () => {
             </Heading>
           </StyledLink>
           <div className="links">
+            <a href={pdf}>Resume</a>
             <Link activeClassName="active" to="/projects">Projects</Link>
-            <Link activeClassName="active" to="/style">Styles</Link>
-            <Link activeClassName="active" to="/">About</Link>
+            {/* <Link activeClassName="active" to="/style">Styles</Link> */}
+            <Link activeClassName="active" to="/">Home</Link>
           </div>
         </HeaderContainer>
       </HeaderWrapper>

@@ -14,7 +14,7 @@ tags:
     "Firebase",
   ]
 featuredImage: ./featured.PNG
-order: 10
+order: 5
 lightboxImages: [./one.PNG, ./two.PNG, ./three.PNG, ./four.PNG, ./five.PNG]
 primaryTech: "React"
 github: "https://github.com/wandrew8/dictionaryApp"

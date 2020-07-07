@@ -14,9 +14,8 @@ tags:
     "Mobile-Responsive",
   ]
 featuredImage: ./featured.PNG
-order: 15
-lightboxImages:
-  [./one.PNG, ./two.PNG, ./three.PNG, ./four.PNG, ./five.PNG, ./featured.PNG]
+order: 35
+lightboxImages: [./one.PNG, ./two.PNG, ./three.PNG, ./four.PNG, ./featured.PNG]
 primaryTech: "React"
 github: "https://github.com/wandrew8/imdb-react-native"
 website: "https://github.com/wandrew8/imdb-react-native"

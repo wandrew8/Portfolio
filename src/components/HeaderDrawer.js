@@ -19,6 +19,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { variables } from '../styles/variables';
+import pdf from '../images/TechResume.pdf';
 
 const drawerWidth = 240;
 
@@ -143,13 +144,16 @@ export default function HeaderDrawer() {
         <Divider />
         <List>
             <ListItem button>
+            <a href={pdf} style={{ textDecoration: "none"}}><ListItemText primary="Resume" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></a>
+            </ListItem>
+            <ListItem button>
               <Link to="/projects" style={{ textDecoration: "none"}}><ListItemText primary="Projects" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
             </ListItem>
-            <ListItem button>
+            {/* <ListItem button>
             <Link to="/style" style={{ textDecoration: "none"}}><ListItemText primary="Style" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
-            </ListItem>
+            </ListItem> */}
             <ListItem button>
-            <Link to="/" style={{ textDecoration: "none"}}><ListItemText primary="About" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
+            <Link to="/" style={{ textDecoration: "none"}}><ListItemText primary="Home" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
             </ListItem>
         </List>
       </Drawer>

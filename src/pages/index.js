@@ -62,12 +62,12 @@ return (
                         <h2 className="title">Weiss</h2>
 
                         <h3 className="subtext">A hands-on creative with a passion for building beautiful websites</h3>
-                        <p>Andrew has been responsible for bringing concepts to life for clients such as Nintendo, Estée Lauder, Oxfam, Scribner, Sony, and many others. His work has been recognised by One Show, ADC, Webby Awards, and Cannes Lions. When Jonny isn't busy educating people on the difference between fonts and typefaces, he can be found taking part in competitive tickling competitions across the UK.</p>
+                        <p>A detail-oriented and solution-focused team player whose passion for building dynamic, innovative, and beautiful web applications has helped teams in achieving multiple awards in best UI/UX. Striving for continued growth through education and refinement of skills in a field that is fast-paced and continuously evolving. My adaptability to changes in this unpredictable field and resilience towards problem-solving make me a strong addition to any development team.</p>
                       </div>
                       <Img className="avatarImage" fluid={image} alt="profile image"/>
                     </div>
                 </SectionTwo>
-                <SectionThree className="section">
+                {/* <SectionThree className="section">
                   <div className="top">
                     <h2>Skills</h2>
                     <hr/>
@@ -111,7 +111,7 @@ return (
                       </div>
                     </SkillsContainer>
                   </div>
-                </SectionThree>
+                </SectionThree> */}
                 <SectionFour className="section">
                     <div>
                       <Overlay />
@@ -247,7 +247,24 @@ const SectionTwo = styled.section`
   .top {
     z-index: 30;
   }
-  
+  @media only screen and (max-width: ${variables.medium}) {
+    display: inherit;
+    width: 100%;
+    .grid {
+      display: block;
+
+    }
+    p {
+      text-align: justify;
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    .avatarImage {
+      display: none;
+      
+    }
+  }
   
   
 `;

@@ -7,7 +7,7 @@ posttype: "project"
 category: "News & Entertainment"
 tags: ["JavaScript", "Third-Party-APIs", "SCSS"]
 featuredImage: ./featuredImage.PNG
-order: 10
+order: 40
 lightboxImages: [./one.PNG, ./two.PNG, featuredImage.PNG]
 primaryTech: "Vanilla JavaScript"
 github: "https://github.com/wandrew8/News-reader"
