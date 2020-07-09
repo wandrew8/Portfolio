@@ -26,7 +26,7 @@ const IndexPage = () => {
           regex: "/avatar/"
         }) {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 500, quality: 100) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }

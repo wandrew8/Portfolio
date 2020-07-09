@@ -77,7 +77,7 @@ export default function Author(props) {
         regex: "/avatar/"
       }) {
         childImageSharp {
-          fluid(maxWidth: 100) {
+          fluid(maxWidth: 100, quality: 100) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }

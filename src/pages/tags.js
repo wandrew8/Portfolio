@@ -61,7 +61,7 @@ query AllTags {
           title
           featuredImage {
             childImageSharp {
-              fluid(maxWidth: 50) {
+              fluid(maxWidth: 50, quality: 100,) {
                 ...GatsbyImageSharpFluid
               }
             }
