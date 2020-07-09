@@ -288,14 +288,14 @@ export const query = graphql`
                 website
                 featuredImage {
                     childImageSharp {
-                        fluid(quality: 100, maxWidth: 1000) {
+                        fluid(quality: 100, maxWidth: 800) {
                             ...GatsbyImageSharpFluid_tracedSVG
                       }
                    }
                 }
                 lightboxImages {
                     childImageSharp {
-                        fluid(quality: 100, maxWidth: 1000) {
+                        fluid(quality: 100, maxWidth: 800) {
                             ...GatsbyImageSharpFluid_tracedSVG
                       }
                     }

@@ -56,8 +56,9 @@ const ContactDrawer = styled.div`
             box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
             transform: scale(1.07)
         }
+    }
 
-    @media only screen and (max-width: ${variables.small}) {
+    @media only screen and (max-width: ${variables.medium}) {
         flex-direction: row;
         left: 50%;
         width: 300px;
