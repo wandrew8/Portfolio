@@ -9,6 +9,7 @@ import Carousel from '../components/carousel'
 import { variables } from '../styles/variables'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage';
+import Contact from '../components/contact'
 import SEO from "../components/seo"
 
 
@@ -49,6 +50,7 @@ return (
           return(
             <ReactFullpage.Wrapper>
                 <SectionOne className="section">
+                    <Contact/>
                       <div>
                         <h2 className="mainName">Andrew Weiss</h2>
                         <h3>Frontend Web Developer</h3>

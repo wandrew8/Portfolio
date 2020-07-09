@@ -98,6 +98,7 @@ const TagContainer = styled.div`
     align-items: center;
     box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.15);
     transition: 200ms linear;
+    overflow: hidden;
     .imageContainer {
       display: flex;
       justify-content: center;
