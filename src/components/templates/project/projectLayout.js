@@ -9,6 +9,8 @@ import Lightbox from '../../lightbox'
 import Layout from '../../layout'
 import styled from 'styled-components'
 import Author from '../../author'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { variables } from '../../../styles/variables'
 
 const StyledHTML = styled.div`
@@ -47,6 +49,14 @@ const Container = styled.div`
     min-width: 300px;
     max-width: 700px;
     margin: 0 auto;
+    a {
+        text-decoration: none;
+    }
+    .icon {
+        display: flex;
+        align-items: center;
+        
+    }
     h1 {
         margin: 3rem 0rem 0.5rem 0rem;
         font-weight: 500;
@@ -252,12 +262,12 @@ export default class projectLayout extends Component {
                     </div>
                     <div className="navigation">
                         {prev ?
-                            <Link to={`/projects${prev.frontmatter.slug}`}>
-                            ← Prev
+                            <Link className="icon" to={`/projects${prev.frontmatter.slug}`}>
+                            <ArrowBackIosIcon /> Prev
                             </Link> : <div></div>}   
                         {next ?
-                            <Link to={`/projects${next.frontmatter.slug}`}>
-                                Next →
+                            <Link className="icon" to={`/projects${next.frontmatter.slug}`}>
+                                Next <ArrowForwardIosIcon />
                             </Link> : <div></div>}
                     </div>
                 </Container>

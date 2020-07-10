@@ -102,7 +102,6 @@ const Header = () => {
       <HeaderWrapper header={header}>
         <HeaderContainer header={header} className={header ? "hidden" : ""}>
           <StyledLink to="/">
-            {/* <img src={logo} alt="" /> */}
             <Heading>
                 Andrew Weiss
             </Heading>

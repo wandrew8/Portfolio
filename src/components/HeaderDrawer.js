@@ -114,7 +114,9 @@ export default function HeaderDrawer() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            Andrew Weiss
+            <Link to="/" style={{color: `${variables.primaryWhite}`, textDecoration: "none"}}>
+              ANDREW WEISS
+            </Link>
           </Typography>
           <IconButton
             color="inherit"

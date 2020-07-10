@@ -15,13 +15,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/src/projects`,
-      },
-    },
+    
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -74,7 +68,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -89,18 +82,43 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/projects`,
+        name: 'projects'
+      }
+    },
+  //   `gatsby-plugin-sharp`,
+  //   {
+  //   resolve: `gatsby-transformer-remark`,
+  //   options: {
+  //     plugins: [
+  //       {
+  //         resolve: `gatsby-source-filesystem`,
+  //         options: {
+  //           maxWidth: 800,
+  //           path: `${__dirname}/src/projects`,
+  //         },
+  //       }
+  //     ]
+  //   }
+  // }
+  `gatsby-plugin-sharp`,
+  {
     resolve: `gatsby-transformer-remark`,
     options: {
       plugins: [
         {
-          resolve: `gatsby-source-filesystem`,
+          resolve: `gatsby-remark-images`,
           options: {
-            maxWidth: 800,
-            path: `${__dirname}/src/projects`,
+            // It's important to specify the maxWidth (in pixels) of
+            // the content container as this plugin uses this as the
+            // base for generating different widths of each image.
+            maxWidth: 590,
           },
-        }
-      ]
-    }
-  }
+        },
+      ],
+    },
+  },
   ]
 }

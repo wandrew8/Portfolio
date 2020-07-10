@@ -5,7 +5,7 @@ subtitle: "Check the weather forecast for a location near you"
 date: "2020-02-07"
 posttype: "project"
 category: "Science and Technology"
-tags: ["HTML", "SCSS", "JavaScript", "Third-Party-APIs", "Gatsby", "Mapping"]
+tags: ["HTML", "SCSS", "JavaScript", "Third-Party-APIs", "Mapping"]
 featuredImage: ./featuredImage.PNG
 order: 55
 primaryTech: "Vanilla JavaScript"

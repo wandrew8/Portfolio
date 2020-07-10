@@ -5,7 +5,7 @@ subtitle: "News Search Application"
 date: "2020-03-21"
 posttype: "project"
 category: "News & Entertainment"
-tags: ["JavaScript", "Third-Party-APIs", "SCSS"]
+tags: ["JavaScript", "Third-Party-APIs", "SCSS", "HTML"]
 featuredImage: ./featuredImage.PNG
 order: 40
 lightboxImages: [./one.PNG, ./two.PNG, featuredImage.PNG]

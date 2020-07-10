@@ -99,6 +99,7 @@ const TagContainer = styled.div`
     box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.15);
     transition: 200ms linear;
     overflow: hidden;
+    cursor: pointer;
     .imageContainer {
       display: flex;
       justify-content: center;
