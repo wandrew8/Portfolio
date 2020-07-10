@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-5906c2814b263d87e22a.js"
+    "url": "webpack-runtime-9355e5736236de29856b.js"
   },
   {
     "url": "framework-fc8605b4487ac0bb45bc.js"
@@ -37,7 +37,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "e2a7e26db029c14af535e1d3a1d8368e"
+    "revision": "e2fd9b9d7605353decf552f7e5b9b045"
   },
   {
     "url": "google-fonts/s/juliussansone/v8/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2",
@@ -80,26 +80,6 @@ self.__precacheManifest = [
     "revision": "95e3e75c69bd36dae9650e8047f2f32e"
   },
   {
-    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwIYqWqZPAA.woff2",
-    "revision": "d724dad2e61905f488d048e51d45ae3e"
-  },
-  {
-    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwJYtWqZPAA.woff2",
-    "revision": "77d77f36bed0a452984832f6b5f22e3f"
-  },
-  {
-    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwOIpWqZPAA.woff2",
-    "revision": "3fef5ebed6aa72326bf742645ba8a331"
-  },
-  {
-    "url": "google-fonts/s/raleway/v14/1Ptrg8zYS_SKggPNwPIsWqZPAA.woff2",
-    "revision": "911d926608ce81ca8d62e74b7d09d276"
-  },
-  {
-    "url": "google-fonts/s/raleway/v14/1Ptug8zYS_SKggPNyC0ITw.woff2",
-    "revision": "43c849ea0258ce0d23a480e840881f16"
-  },
-  {
     "url": "google-fonts/s/raleway/v16/1Ptrg8zYS_SKggPNwIYqWqZPAA.woff2",
     "revision": "d724dad2e61905f488d048e51d45ae3e"
   },
@@ -118,10 +98,6 @@ self.__precacheManifest = [
   {
     "url": "google-fonts/s/raleway/v16/1Ptug8zYS_SKggPNyC0ITw.woff2",
     "revision": "43c849ea0258ce0d23a480e840881f16"
-  },
-  {
-    "url": "google-fonts/s/salsa/v9/gNMKW3FiRpKj-hmf-HY.woff2",
-    "revision": "281a1d85c8866fb591aea2470cd419a0"
   },
   {
     "url": "google-fonts/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2",
@@ -148,7 +124,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "4bf8bca72a031fb7f51c531699cdc449"
+    "revision": "83a40ba5f8bbe75024c1671fad75f8a3"
   },
   {
     "url": "manifest.webmanifest",
