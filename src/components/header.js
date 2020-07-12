@@ -107,7 +107,7 @@ const Header = () => {
             </Heading>
           </StyledLink>
           <div className="links">
-            <a href={pdf}>Resume</a>
+            <Link activeClassName="active" to="/resume">Resume</Link>
             <Link activeClassName="active" to="/projects">Projects</Link>
             {/* <Link activeClassName="active" to="/style">Styles</Link> */}
             <Link activeClassName="active" to="/">Home</Link>

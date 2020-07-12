@@ -43,26 +43,12 @@ export const Post = styled.article`
     transition: 200ms linear;
     overflow: hidden;
     cursor: pointer;
-    position: relative;
+
     &:hover {
       box-shadow: 0px 3px 20px rgba(25, 17, 34, 0.1);
       & .projectImage {
         transform: scale(1.01);
       }
-    }
-    .posttype {
-      position: absolute;
-      color: ${variables.primaryWhite};
-      background:  ${props => props.project ? variables.primaryGreen : variables.primaryBlue};
-      padding: 0.1rem;
-      width: 100%;
-      z-index: 100;
-      margin: -1rem;
-      opacity: 0.5rem;
-      text-transform: uppercase;
-      opacity: 0.9;
-      text-align: center;
-      font-weight: 300;
     }
     .projectImage {
       width: 100%;
@@ -97,9 +83,9 @@ export const Post = styled.article`
     }
 `;
 
-const LISTING_QUERY = graphql`
-query ProjectPostListing {
-allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "project"}}}, sort: {order: ASC, fields: frontmatter___order}) {
+const Hackathon_Query = graphql`
+query hackathonListing {
+allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "hackathon"}}}, sort: {order: ASC, fields: frontmatter___order}) {
       edges {
         node {
           frontmatter {
@@ -125,7 +111,7 @@ allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "project"}}}
 
 const Listing = () => (
   <StaticQuery 
-    query={LISTING_QUERY}
+    query={Hackathon_Query}
     render={({ allMarkdownRemark }) => {
         return (
             <GridContainer>
@@ -135,7 +121,7 @@ const Listing = () => (
                   console.log(image)
                   return (
                       <Post key={slug}>
-                          <Link to={`/projects${slug}`}>
+                          <Link to={`/hackathon${slug}`}>
                             <Img className="projectImage" fluid={image} />
                             <h2>{title}</h2>
                             <p>{subtitle}</p>

@@ -16,16 +16,17 @@ const Tags = ({ pageContext, data }) => {
     } tagged with "${tag}"`
     return (
       <Layout2>
-        <div>
+        <Card>
             <h1>{tagHeader}</h1>
             <GridContainer>
             {edges.map(edge => {
-                const { frontmatter: { slug, title, category, primaryTech, date, subtitle } } = edge.node
+                const { frontmatter: { slug, title, category, primaryTech, date, subtitle, posttype } } = edge.node
                 const image = edge.node.frontmatter.featuredImage.childImageSharp.fluid
                 console.log(image)
                 return (
-                    <Post key={slug}>
-                        <Link to={`/projects${slug}`}>
+                    <Post key={slug} project={posttype === "project" ? true : false}>
+                        <p className="posttype">{posttype}</p>
+                        <Link to={posttype === "project" ? `/projects${slug}` : `/hackathon${slug}`}>
                         <Img className="projectImage" fluid={image} />
                         <h2>{title}</h2>
                         <p>{subtitle}</p>
@@ -37,7 +38,7 @@ const Tags = ({ pageContext, data }) => {
             })}
             </GridContainer>
             <StyledButton><Link to="/tags">View All tags</Link></StyledButton>
-        </div>
+        </Card>
       </Layout2>
     )
   }
@@ -83,7 +84,9 @@ export const pageQuery = graphql`
     }
   }
 `
-
+const Card = styled.div`
+ 
+`;
 const StyledButton = styled.div`
     padding: 0.2rem 0.5rem;
     text-align: center;
@@ -97,6 +100,7 @@ const StyledButton = styled.div`
     max-width: 250px;
     margin: 0 auto;
     background-color: ${variables.primaryBlue};
+   
     a {
       text-decoration: none;
       color: ${variables.primaryWhite};

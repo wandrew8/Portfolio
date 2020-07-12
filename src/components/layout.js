@@ -33,7 +33,7 @@ const Gradient = styled.div`
   background: linear-gradient(90deg, ${variables.primaryBlue}, ${variables.primaryGreen});
 `;
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, grid, location }) => {
   const [ width, setWidth ] = useState();
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -57,9 +57,13 @@ const Layout = ({ children, location }) => {
               </div>
             )}
           </Spring>
+          {grid ? <div>
+            {children}
+          </div> : 
         <MainWrapper>
             {children}
         </MainWrapper>
+          }
         <StyledFooter>
           © {new Date().getFullYear()} Andrew Weiss
         </StyledFooter>

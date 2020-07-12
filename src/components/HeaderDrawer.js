@@ -146,7 +146,7 @@ export default function HeaderDrawer() {
         <Divider />
         <List>
             <ListItem button>
-            <a href={pdf} style={{ textDecoration: "none"}}><ListItemText primary="Resume" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></a>
+              <Link to="/resume" style={{ textDecoration: "none"}}><ListItemText primary="Resume" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
             </ListItem>
             <ListItem button>
               <Link to="/projects" style={{ textDecoration: "none"}}><ListItemText primary="Projects" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>

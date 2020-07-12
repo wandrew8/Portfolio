@@ -69,6 +69,19 @@ exports.createPages = ({ graphql, actions }) => {
                       }
                     });
                   }
+                  if (node.frontmatter.posttype === 'hackathon') {
+                    createPage({
+                      path: `/hackathon${node.frontmatter.slug}`,
+                      component: path.resolve('./src/components/templates/hackathon/hackathonLayout.js'),
+                      context: {
+                        slug:  node.frontmatter.slug,
+                        category: node.frontmatter.category,
+                        tags: node.frontmatter.tags,
+                        prev: index === 0 ? null : post[index - 1].node.frontmatter.posttype === "hackathon" ? null : post[index - 1].node,
+                        next: index === (post.length - 1) ? null : post[index + 1].node.frontmatter.posttype === "hackathon" ? null : post[index + 1].node,
+                      }
+                    });
+                  }
                 })
                 
             resolve();
