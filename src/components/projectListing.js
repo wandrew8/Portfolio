@@ -58,7 +58,7 @@ export const Post = styled.article`
       padding: 0.1rem 1.5rem;
       width: 100%;
       font-size: 1rem;
-      z-index: 100;
+      z-index: 99;
       margin: -1rem;
       opacity: 0.5rem;
       text-transform: uppercase;
