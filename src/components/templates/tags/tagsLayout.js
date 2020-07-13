@@ -22,7 +22,6 @@ const Tags = ({ pageContext, data }) => {
             {edges.map(edge => {
                 const { frontmatter: { slug, title, category, primaryTech, date, subtitle, posttype } } = edge.node
                 const image = edge.node.frontmatter.featuredImage.childImageSharp.fluid
-                console.log(image)
                 return (
                     <Post key={slug} project={posttype === "project" ? true : false}>
                         <p className="posttype">{posttype}</p>

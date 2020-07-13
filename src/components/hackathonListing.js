@@ -118,7 +118,6 @@ const Listing = () => (
               {allMarkdownRemark.edges.map(edge => {
                   const { frontmatter: { slug, title, category, primaryTech, date, subtitle } } = edge.node
                   const image = edge.node.frontmatter.featuredImage.childImageSharp.fluid
-                  console.log(image)
                   return (
                       <Post key={slug}>
                           <Link to={`/hackathon${slug}`}>

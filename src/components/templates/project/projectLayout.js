@@ -227,7 +227,6 @@ export default class projectLayout extends Component {
         const { location, pageContext: { next, prev } } = this.props;
         const image = this.props.data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
         const lightboxImagesArray = this.props.data.markdownRemark.frontmatter.lightboxImages.map(image => (image.childImageSharp)) || [];
-        console.log(lightboxImagesArray)
         return (
             <Layout location={location}>
                 <Container>
