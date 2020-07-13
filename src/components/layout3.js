@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
   });
   return (
     <App>
-      {width > 756 ? <Header /> : <HeaderDrawer />}
+      {width > 928 ? <Header /> : <HeaderDrawer />}
         <MainWrapper>
             {children}
         </MainWrapper>

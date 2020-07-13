@@ -47,7 +47,7 @@ const Layout = ({ children, grid, location }) => {
   });
   return (
     <App>
-      {width > 756 ? <Header /> : <HeaderDrawer />}
+      {width > 928 ? <Header /> : <HeaderDrawer />}
           <Spring 
             from={{ height: location.pathname === '/' ? 100 : 150 }} 
             to={{ height: location.pathname === '/' ? 150 : 100 }}>

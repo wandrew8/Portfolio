@@ -90,7 +90,7 @@ const StyledButton = styled.div`
     padding: 0.2rem 0.5rem;
     text-align: center;
     border-radius: 5px;
-    z-index: 100;
+    z-index: 99;
     border: solid 2px ${variables.primaryBlue};
     transition: 300ms ease-in;
     cursor: pointer;
