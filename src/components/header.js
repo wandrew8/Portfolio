@@ -109,7 +109,7 @@ const Header = () => {
           <div className="links">
             <Link activeClassName="active" to="/resume">Resume</Link>
             <Link activeClassName="active" to="/projects">Projects</Link>
-            {/* <Link activeClassName="active" to="/style">Styles</Link> */}
+            <Link activeClassName="active" to="/hackathon">Hackathons</Link>
             <Link activeClassName="active" to="/">Home</Link>
           </div>
         </HeaderContainer>

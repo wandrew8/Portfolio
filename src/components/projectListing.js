@@ -51,17 +51,19 @@ export const Post = styled.article`
       }
     }
     .posttype {
+      padding-left: 1rem;
       position: absolute;
       color: ${variables.primaryWhite};
-      background:  ${props => props.project ? variables.primaryGreen : variables.primaryBlue};
-      padding: 0.1rem;
+      background: ${props => props.project ? variables.primaryGreen : variables.primaryBlue };
+      padding: 0.1rem 1.5rem;
       width: 100%;
+      font-size: 1rem;
       z-index: 100;
       margin: -1rem;
       opacity: 0.5rem;
       text-transform: uppercase;
       opacity: 0.9;
-      text-align: center;
+      text-align: left;
       font-weight: 300;
     }
     .projectImage {

@@ -1,30 +1,19 @@
 ---
-slug: "/currency-hack"
+slug: "/currency-converter"
 title: "Currency Converter"
-subtitle: "Todo List Application for your whole team"
-date: "2019-10-16"
-url: ""
+subtitle: "Check the Exchange Rates of the World's Top Currencies"
+date: "2020-06-22"
+dateFinished: "2020-06-22"
+urlLink: "https://wandrew8.github.io/currency-exchange/"
 posttype: "hackathon"
-category: "Productivity"
-tags:
-  [
-    "HTML",
-    "JavaScript",
-    "JQuery",
-    "Bootstrap",
-    "Mobile-Responsive",
-    "Node",
-    "Express",
-    "MySQL",
-    "Third-Party-APIs",
-  ]
+category: "Science & Technology"
+tags: ["React", "JavaScript", "Styled Components", "Third-Party-APIs"]
 featuredImage: ./featured.PNG
-order: 110
+timeAlloted: "4 Hours"
 primaryTech: "React"
-github: "https://github.com/sbc1133/Battelist"
-website: "https://aqueous-brushlands-92949.herokuapp.com/"
+github: "https://github.com/wandrew8/currency-exchange"
+website: "https://wandrew8.github.io/currency-exchange/"
+heading: "Currency Converter Hackathon"
 ---
 
-## Keep your team on task and productive
-
-An easy to use productivity application that allows the user to set up a family account. The user can create todo lists for each family member and send their lists to them via email or sms message using the nodemailer and twilio APIs. User information is not stored locally, but utilizes a backend database to create, query and delete user information and tasks assignned to team members. The frontend was designed with MDBootstrap and is fully mobile responsive.
+This hackathon's objective was to build a currency converter. I built my converter using the exchangeRateAPI for up-to-date exchange rate data. I built the application using React and decided to focus on showcasing just a handfull of currencies rather than all of the currencies available from the API. I used contryflags.io along with the contry codes to display country flags.

@@ -14,28 +14,11 @@ import { variables } from '../../../styles/variables'
 const StyledHTML = styled.div`
     p {
         text-align: justify;
-        &:first-of-type :first-letter {
-            font-weight: 400;
-            font-size: 4rem;
-            line-height: 1;
-            float: left;
-            padding-right: 10px;
-            padding-left: 2px;
-            text-transform: uppercase;        
-        }
+        margin: 2rem 0rem;
     }
     h2 {
         position: relative;
         padding: 0rem 1.5rem;
-        &:before {
-            position: absolute;
-            content: "❝";
-            font-size: 8rem;
-            color: #7f7f7f;
-            opacity: 0.2;
-            top: -2.5rem;
-            left: 0rem;
-        }
     }
 
    
@@ -45,8 +28,16 @@ const Container = styled.div`
     position: relative;
     width: 90%;
     min-width: 300px;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
+    text-align: center;
+    iframe {
+        margin: 0 auto;
+    }
+    .aspect-ratio {
+        width: 90vw;
+        max-width: 900px
+    }
     a {
         text-decoration: none;
     }
@@ -186,6 +177,14 @@ const Container = styled.div`
             grid-template-columns: 1fr;
         }
     }
+    .info {
+        color: ${variables.primaryLightGray};
+        font-size: 0.9rem;
+        text-align: left;
+        p {
+            margin: 0.1rem;
+        }
+    }
     .links {
         text-align: left;
         margin: 0rem;
@@ -221,16 +220,22 @@ const Container = styled.div`
 
 export default class hackathonLayout extends Component {
     render() {
-        const { html, frontmatter: { title, github, website, date, tags, primaryTech, category, subtitle, timeAlloted, url  } } = this.props.data.markdownRemark;
+        const { html, frontmatter: { title, dateFinished, github, website, date, tags, primaryTech, category, subtitle, timeAlloted, urlLink, heading  } } = this.props.data.markdownRemark;
         const { location, pageContext: { next, prev } } = this.props;
-        const image = this.props.data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid;
         return (
             <Layout grid={true} location={location}>
                 <Container>
                     <h1>{title}</h1>
                     <p className="subtitle">{subtitle}</p>
                     <Author date={date} category={category} primaryTech={primaryTech} />
-                    <iframe src={url}></iframe>
+                    <div className="aspect-ratio">
+                        <iframe src={urlLink} width="100%" height="500px" data-url={urlLink}></iframe>
+                    </div>
+                    <h2>{heading}</h2>
+                    <div className="info">
+                        <p>Length: {timeAlloted}</p>
+                        <p>Date: {dateFinished}</p>
+                    </div>
                     <StyledHTML dangerouslySetInnerHTML={{
                         __html: html
                     }} />
@@ -280,6 +285,10 @@ export const query = graphql`
                 primaryTech
                 github
                 website
+                urlLink
+                heading
+                dateFinished(formatString: "MMMM DD, YYYY")
+                timeAlloted
                 featuredImage {
                     childImageSharp {
                         fluid(quality: 100, maxWidth: 800) {

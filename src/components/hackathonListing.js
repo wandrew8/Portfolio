@@ -85,7 +85,7 @@ export const Post = styled.article`
 
 const Hackathon_Query = graphql`
 query hackathonListing {
-allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "hackathon"}}}, sort: {order: ASC, fields: frontmatter___order}) {
+allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "hackathon"}}}, sort: {order: DESC, fields: frontmatter___order}) {
       edges {
         node {
           frontmatter {
