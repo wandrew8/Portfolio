@@ -22,6 +22,16 @@ const MainWrapper = styled.main`
 
 `;
 
+const OtherWrapper = styled.div`
+ max-width: 90%;
+  margin: 0rem auto;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  padding: 1rem 0rem;
+`;
+
 const StyledFooter = styled.footer`
   color: ${variables.primaryLightGray};
   font-size: 0.9rem;
@@ -47,7 +57,7 @@ const Layout = ({ children, grid, location }) => {
   });
   return (
     <App>
-      {width > 756 ? <Header /> : <HeaderDrawer />}
+      {width > 928 ? <Header /> : <HeaderDrawer />}
           <Spring 
             from={{ height: location.pathname === '/' ? 100 : 150 }} 
             to={{ height: location.pathname === '/' ? 150 : 100 }}>
@@ -57,9 +67,9 @@ const Layout = ({ children, grid, location }) => {
               </div>
             )}
           </Spring>
-          {grid ? <div>
+          {grid ? <OtherWrapper>
             {children}
-          </div> : 
+          </OtherWrapper> : 
         <MainWrapper>
             {children}
         </MainWrapper>
