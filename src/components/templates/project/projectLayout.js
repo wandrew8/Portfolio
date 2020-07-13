@@ -12,6 +12,8 @@ import Author from '../../author'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { variables } from '../../../styles/variables'
+import ReactTooltip from "react-tooltip";
+
 
 const StyledHTML = styled.div`
     p {
@@ -250,8 +252,9 @@ export default class projectLayout extends Component {
                     </div>
                     <div className="metaInfo">
                         <div className="links">
-                            <div className="link" ><a href={website} target="_blank"><FontAwesomeIcon icon={faGlobe}/></a></div>
-                            <div className="link" ><a href={github} target="_blank"><FontAwesomeIcon icon={faCode}/></a></div>
+                        <ReactTooltip />
+                            <div data-tip="Visit Website" className="link" ><a href={website} target="_blank"><FontAwesomeIcon icon={faGlobe}/></a></div>
+                            <div data-tip="View Source Code" className="link" ><a href={github} target="_blank"><FontAwesomeIcon icon={faCode}/></a></div>
                         </div>
                         <div className="tags">
                             {tags.map(tag => (

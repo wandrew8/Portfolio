@@ -10,6 +10,8 @@ import Author from '../../author'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { variables } from '../../../styles/variables'
+import ReactTooltip from "react-tooltip";
+
 
 const StyledHTML = styled.div`
     p {
@@ -36,9 +38,37 @@ const Container = styled.div`
     }
     .aspect-ratio {
         width: 90vw;
-        max-width: 900px
+        max-width: 900px;
+        position: relative;
+        iframe {
+            outline: none;
+            border: none;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin: 1.5rem 0rem;
+        }
+        button {
+            position: absolute;
+            bottom: 40px;
+            left: 8px;
+            padding: 0rem 0.5rem;
+            text-align: center;
+            border-radius: 2px;
+            display: block;
+            font-size: 0.7rem;
+            border: solid 1px ${variables.primaryLightGray};
+            color: ${variables.primaryLightGray};
+            transition: 300ms ease-in;
+            cursor: pointer;
+            width: auto-fit;
+            background: ${variables.primaryWhite};
+            z-index: 100;
+            &:hover {
+                background: ${variables.primaryLightGray};
+                color: ${variables.primaryWhite};
+            }
     }
-    a {
+    a 
         text-decoration: none;
     }
     .icon {
@@ -229,6 +259,7 @@ export default class hackathonLayout extends Component {
                     <p className="subtitle">{subtitle}</p>
                     <Author date={date} category={category} primaryTech={primaryTech} />
                     <div className="aspect-ratio">
+                    <a href={website} target="_blank"><button>Visit Website</button></a>
                         <iframe src={urlLink} width="100%" height="500px" data-url={urlLink}></iframe>
                     </div>
                     <h2>{heading}</h2>
@@ -241,8 +272,9 @@ export default class hackathonLayout extends Component {
                     }} />
                     <div className="metaInfo">
                         <div className="links">
-                            <div className="link" ><a href={website} target="_blank"><FontAwesomeIcon icon={faGlobe}/></a></div>
-                            <div className="link" ><a href={github} target="_blank"><FontAwesomeIcon icon={faCode}/></a></div>
+                        <ReactTooltip />
+                            <div data-tip="Visit Website" className="link" ><a href={website} target="_blank"><FontAwesomeIcon icon={faGlobe}/></a></div>
+                            <div data-tip="View Source Code" className="link" ><a href={github} target="_blank"><FontAwesomeIcon icon={faCode}/></a></div>
                         </div>
                         <div className="tags">
                             {tags.map(tag => (
