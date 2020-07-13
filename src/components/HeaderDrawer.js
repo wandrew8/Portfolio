@@ -151,9 +151,9 @@ export default function HeaderDrawer() {
             <ListItem button>
               <Link to="/projects" style={{ textDecoration: "none"}}><ListItemText primary="Projects" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
             </ListItem>
-            {/* <ListItem button>
-            <Link to="/style" style={{ textDecoration: "none"}}><ListItemText primary="Style" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
-            </ListItem> */}
+            <ListItem button>
+            <Link to="/hackathon" style={{ textDecoration: "none"}}><ListItemText primary="Hackathons" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
+            </ListItem>
             <ListItem button>
             <Link to="/" style={{ textDecoration: "none"}}><ListItemText primary="Home" style={{ color: variables.primaryDark, fontFamily: variables.primaryFont}}/></Link>
             </ListItem>
