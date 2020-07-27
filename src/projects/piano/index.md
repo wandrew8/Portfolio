@@ -10,7 +10,7 @@ category: "Music & Entertainment"
 tags: ["HTML", "JavaScript", "CSS", "Animations"]
 featuredImage: ./featured.PNG
 timeAlloted: "4 Hours"
-primaryTech: "Vanialla JavaScript"
+primaryTech: "Vanilla JavaScript"
 github: "https://github.com/wandrew8/animation-game"
 website: "https://wandrew8.github.io/animation-game/"
 heading: "Music Hackathon"
