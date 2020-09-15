@@ -94,7 +94,7 @@ allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "hackathon"}
             subtitle
             category
             primaryTech
-            date(fromNow: true)
+            date(formatString: "MMMM DD, YYYY")
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 300) {

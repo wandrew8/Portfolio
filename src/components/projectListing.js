@@ -110,7 +110,7 @@ allMarkdownRemark(limit: 100, filter: {frontmatter: {posttype: {eq: "project"}}}
             subtitle
             category
             primaryTech
-            date(fromNow: true)
+            date(formatString: "MMMM DD, YYYY")
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 300) {

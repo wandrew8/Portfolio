@@ -289,7 +289,7 @@ export const query = graphql`
             html
             frontmatter {
                 title
-                date(fromNow: true)
+                date(formatString: "MMMM DD, YYYY")
                 slug
                 tags
                 posttype
