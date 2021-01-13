@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import resume from '../images/TechResume.pdf';
+import resume from '../images/Resume2021.pdf';
 import styled from 'styled-components';
 
 const Projects = () => {
