@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-47137b59fcb01db25d9a.js"
+    "url": "webpack-runtime-abed03a2571922781113.js"
   },
   {
     "url": "framework-64cc76c2584951c8db93.js"
@@ -37,63 +37,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "bd9dc1709d024c80a3954fe1ba6b592f"
-  },
-  {
-    "url": "google-fonts/s/juliussansone/v9/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2",
-    "revision": "cfdae712dfd393ac61f0245c0fb7d9c6"
-  },
-  {
-    "url": "google-fonts/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_aZA3gnD_g.woff2",
-    "revision": "85d5ef9db7f2dc6979172a4a3b2c57cb"
-  },
-  {
-    "url": "google-fonts/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2",
-    "revision": "7c3daf12b706645b5d3710f863a4da04"
-  },
-  {
-    "url": "google-fonts/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2",
-    "revision": "92d16e458625f4d2c8940f6bdca0ff09"
-  },
-  {
-    "url": "google-fonts/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
-    "revision": "bc3aa95dca08f5fee5291e34959c27bc"
-  },
-  {
-    "url": "google-fonts/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2",
-    "revision": "0edb76284a7a0f8db4665b560ee2b48f"
-  },
-  {
-    "url": "google-fonts/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOUuhp.woff2",
-    "revision": "819af3d3abdc9f135d49b80a91e2ff4c"
-  },
-  {
-    "url": "google-fonts/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2",
-    "revision": "24f7b0944e9e03a905f9d7701573b2cd"
-  },
-  {
-    "url": "google-fonts/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0b.woff2",
-    "revision": "33543c5cc5d88f5695dd08c87d280dfd"
-  },
-  {
-    "url": "google-fonts/s/patuaone/v11/ZXuke1cDvLCKLDcimxB44_lu.woff2",
-    "revision": "95e3e75c69bd36dae9650e8047f2f32e"
-  },
-  {
-    "url": "google-fonts/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2",
-    "revision": "899c8f78ce650d4009d42443897aa723"
-  },
-  {
-    "url": "google-fonts/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu.woff2",
-    "revision": "c85615b296302af51e683eecb5e371d4"
-  },
-  {
-    "url": "google-fonts/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2",
-    "revision": "1a4bcb3ec9c508d478d4dbf6b56f6208"
-  },
-  {
-    "url": "google-fonts/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2",
-    "revision": "ede18477b85a5d781cd2f4001ecc5e67"
+    "revision": "1fcc8d4c36867c211449222ef30a9b66"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-8bd234f402a318d0d4d6.js"
@@ -104,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "fb79545b53baeae437b1485223862f5e"
+    "revision": "f0e79b19257b4366adb0aa9bc241c84c"
   },
   {
     "url": "manifest.webmanifest",
