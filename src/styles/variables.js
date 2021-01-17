@@ -1,3 +1,8 @@
+import "@fontsource/patua-one";
+import "@fontsource/montserrat";
+import "@fontsource/playfair-display";
+import "@fontsource/open-sans";
+
 export const variables = {
     //Color Variables
     primaryDark: "#161616",

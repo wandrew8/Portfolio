@@ -24,49 +24,51 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Julius Sans One`,
-            variants: [`300`, `400`, `600`, `700`]
-          },
-          {
-            family: 'Roboto Slab',
-            variants: [`300`, `400`, `600`, `700`],
-          },
-          {
-            family: `Salsa`,
-            variants: [`400`]
-          },
-          {
-            family: `Patua One`,
-            variants: [`400`]
-          },
-          {
-            family: 'Montserrat',
-            variants: [`200`, `300`, `400`, `500`]
-          },
-          {
-            family: `Open Sans`,
-            variants: [`300`, `400`, `600`, `700`]
-          },
-          {
-            family: `Raleway`,
-            variants: [`200`, `300`, `400`, `600`, `700`]
-          },
-          {
-            family: `Playfair Display`,
-            variants: [`300`, `400`, `600`, `700`]
-          },
-          {
-            family: "Source Sans Pro",
-            variants: [`200`, `300`, `400`, `600`, `700`]
-          }
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Julius Sans One`,
+    //         variants: [`300`, `400`, `600`, `700`]
+    //       },
+    //       {
+    //         family: 'Roboto Slab',
+    //         variants: [`300`, `400`, `600`, `700`],
+    //       },
+    //       {
+    //         family: `Salsa`,
+    //         variants: [`400`]
+    //       },
+    //       {
+    //         family: `Patua One`,
+    //         variants: [`400`]
+    //       },
+    //       {
+    //         family: 'Montserrat',
+    //         variants: [`200`, `300`, `400`, `500`]
+    //       },
+    //       {
+    //         family: `Open Sans`,
+    //         variants: [`300`, `400`, `600`, `700`]
+    //       },
+    //       {
+    //         family: `Raleway`,
+    //         variants: [`200`, `300`, `400`, `600`, `700`]
+    //       },
+    //       {
+    //         family: `Playfair Display`,
+    //         variants: [`300`, `400`, `600`, `700`]
+    //       },
+    //       {
+    //         family: "Source Sans Pro",
+    //         variants: [`200`, `300`, `400`, `600`, `700`]
+    //       }
+    //     ],
+    //   },
+    // },
+    
+    `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
