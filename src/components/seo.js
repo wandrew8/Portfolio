@@ -67,6 +67,14 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: `https://res.cloudinary.com/dcokaa0ia/image/upload/c_scale,h_627,w_1200/v1616364305/samples/portfolio_z837jk.png`,
+        },
       ].concat(meta)}
     />
   )
@@ -75,7 +83,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
+  description: `Andrew's Portfolio`,
 }
 
 SEO.propTypes = {

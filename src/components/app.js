@@ -6,7 +6,7 @@ export default class app extends Component {
     render() {
         return (
             <div>
-                <Seo />
+                <Seo title="Andrew's Portfolio" lang="en-us"/>
                 <GlobalStyles/>
                 {this.props.children}
             </div>
